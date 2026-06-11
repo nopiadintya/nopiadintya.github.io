@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="id" class="dark-theme">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Profesional | Veny Marseleni, S.Pd.</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts for modern tech typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">&lt;VM/&gt;</a>
+            <ul class="nav-links">
+                <li><a href="#about">Tentang</a></li>
+                <li><a href="#experience">Pengalaman</a></li>
+                <li><a href="#research">Riset & Proyek</a></li>
+                <li><a href="#publications">Publikasi</a></li>
+                <li><a href="#contact">Kontak</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <p class="greeting">Halo, saya</p>
+            <h1>Veny Marseleni, S.Pd.</h1>
+            <p class="subtitle">Pendidik & Peneliti | <span class="accent-text">Digital Forensics & Agronomi</span></p>
+            <p class="hero-description">
+                Menjembatani dunia pendidikan dengan eksplorasi ilmiah mendalam. Berfokus pada analisis artefak digital, steganografi, serta inovasi ketahanan pangan di wilayah tanah marginal.
+            </p>
+            <div class="hero-buttons">
+                <a href="#research" class="btn btn-primary">Eksplorasi Proyek</a>
+                <a href="#contact" class="btn btn-secondary">Mari Berkolaborasi</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">01. Tentang Saya</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>
+                        Sebagai seorang pendidik dengan gelar Sarjana Pendidikan (S.Pd.), saya mendedikasikan diri untuk membentuk karakter di tingkat anak usia dini. Namun, ketertarikan saya terhadap riset mendorong saya untuk melangkah lebih jauh.
+                    </p>
+                    <p>
+                        Saat ini, saya aktif meneliti di dua bidang yang kontras namun sama-sama menantang: <strong>Digital Forensics</strong> (khususnya <em>drone flight logs parser</em> dan steganografi) serta <strong>Agronomi</strong> (fokus pada optimasi tanah Ultisol untuk komoditas jagung). Pendekatan interdisipliner ini memungkinkan saya memecahkan masalah dengan sudut pandang yang unik dan metodis.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section bg-darker">
+        <div class="container">
+            <h2 class="section-title">02. Rekam Jejak</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">Sekarang</div>
+                    <div class="timeline-content">
+                        <h3>Tenaga Pendidik (Unit KB/TK)</h3>
+                        <p class="timeline-institution">Sekolah Adicita Mulia</p>
+                        <p>Mengembangkan kurikulum pembelajaran kreatif, interaktif, dan berfokus pada pembentukan karakter serta stimulasi tumbuh kembang anak usia dini secara holistik.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">Pendidikan</div>
+                    <div class="timeline-content">
+                        <h3>Sarjana Pendidikan (S.Pd.)</h3>
+                        <p class="timeline-institution">Universitas Terkait</p>
+                        <p>Fokus pada metodologi pengajaran, psikologi perkembangan, dan manajemen kelas profesional, yang menjadi fondasi dalam pendekatan riset saya.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research & Projects Section -->
+    <section id="research" class="section">
+        <div class="container">
+            <h2 class="section-title">03. Riset & Proyek Terpilih</h2>
+            <div class="project-grid">
+                
+                <!-- Project 1: Digital Forensics -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <span class="folder-icon">📁</span>
+                        <div class="project-links">
+                            <a href="#" class="icon-link" aria-label="GitHub Link">⎇</a>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <h3>Drone Flight Logs Parser (iLEAPP)</h3>
+                        <p>Pengembangan modul parser khusus (.DAT, .TXT, .LOG) yang diintegrasikan ke alat forensik iLEAPP. Memungkinkan investigator melacak koordinat GPS dan riwayat penerbangan secara akurat.</p>
+                        <div class="tech-stack">
+                            <span>Python</span>
+                            <span>iLEAPP</span>
+                            <span>Autopsy</span>
+                            <span>MAPE</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: Steganography -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <span class="folder-icon">📁</span>
+                        <div class="project-links">
+                            <a href="#" class="icon-link" aria-label="External Link">↗</a>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <h3>Steganalisis Berbasis LSB</h3>
+                        <p>Penelitian mengenai penyembunyian pesan rahasia di media digital menggunakan <em>Least Significant Bit</em>, serta analisis perubahan piksel untuk deteksi data tersembunyi.</p>
+                        <div class="tech-stack">
+                            <span>Python</span>
+                            <span>Cryptography</span>
+                            <span>Pixel Analysis</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Agronomy -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <span class="folder-icon">🔬</span>
+                    </div>
+                    <div class="project-body">
+                        <h3>Optimasi Jagung Pioneer 32</h3>
+                        <p>Riset lapangan pengaruh kombinasi pupuk kandang dan NPK terhadap hasil panen jagung (<em>Zea mays L.</em>) pada karakteristik tanah Ultisol yang masam di Kalimantan Barat.</p>
+                        <div class="tech-stack">
+                            <span>RAK Method</span>
+                            <span>Soil Chemistry</span>
+                            <span>Agronomy</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications -->
+    <section id="publications" class="section bg-darker">
+        <div class="container">
+            <h2 class="section-title">04. Publikasi & Pengabdian</h2>
+            <div class="publication-list">
+                <div class="publication-item">
+                    <span class="pub-badge">Accepted (Feb 2026)</span>
+                    <div class="pub-details">
+                        <h4>Pelatihan Pembuatan Pupuk Hayati Pada Kelompok Tani Jagung di Desa Binjai Kecamatan Tayan Hulu Kabupaten Sanggau</h4>
+                        <p class="pub-journal"><strong>Jurnal Dinamika Pengabdian</strong></p>
+                        <p class="pub-desc">Kolaborasi pengabdian bersama Rita Hayati, Sutarman Gafur, Junaidi, dan Abdulmujib Alhaddad. Berfokus pada transfer teknologi produksi pupuk hayati untuk memulihkan tanah marginal.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+        <div class="container text-center">
+            <p class="pre-title">05. Langkah Selanjutnya</p>
+            <h2 class="contact-heading">Hubungi Saya</h2>
+            <p class="contact-lead">Kotak masuk saya selalu terbuka. Baik Anda memiliki pertanyaan mengenai kolaborasi riset, pengembangan forensik digital, atau sekadar ingin menyapa, saya akan berusaha memberikan balasan terbaik.</p>
+            <a href="mailto:emailanda@example.com" class="btn btn-primary btn-large">Kirim Pesan</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container text-center">
+            <p>&copy; 2026 Veny Marseleni, S.Pd. Built with HTML & CSS.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
