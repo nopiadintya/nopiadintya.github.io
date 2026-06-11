@@ -5,16 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portofolio Profesional | Novi Adintya Putra, S.Kom., M.Kom.</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts for modern tech typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
+    <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="#" class="logo">&lt;NAP/&gt;</a>
             
+            <!-- Hamburger Menu Icon -->
             <div class="menu-toggle" id="mobile-menu">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -31,6 +34,7 @@
         </div>
     </nav>
 
+    <!-- Hero Section -->
     <header class="hero">
         <div class="container">
             <div class="hero-content">
@@ -48,6 +52,7 @@
         </div>
     </header>
 
+    <!-- About Section -->
     <section id="about" class="section">
         <div class="container">
             <h2 class="section-title">01. Tentang Saya</h2>
@@ -64,6 +69,7 @@
         </div>
     </section>
 
+    <!-- Experience & Education Section -->
     <section id="experience" class="section bg-darker">
         <div class="container">
             <h2 class="section-title">02. Pendidikan & Latar Belakang</h2>
@@ -90,11 +96,13 @@
         </div>
     </section>
 
+    <!-- Research Section (Hanya Riset Akademik/Forensik) -->
     <section id="research" class="section">
         <div class="container">
-            <h2 class="section-title">03. Riset & Proyek Terpilih</h2>
+            <h2 class="section-title">03. Riset Terpilih</h2>
             <div class="project-grid">
                 
+                <!-- Riset 1: Digital Forensics -->
                 <div class="project-card">
                     <div class="project-header">
                         <span class="folder-icon">📁</span>
@@ -104,16 +112,16 @@
                     </div>
                     <div class="project-body">
                         <h3><a href="detail-proyek.html" style="color: inherit; text-decoration: none;">Drone Flight Logs Parser to iLEAPP</a></h3>
-                        <p>Mengembangkan dan mengintegrasikan modul parser log penerbangan drone (format .DAT, .TXT, .LOG dari perangkat DJI) ke dalam ekosistem iLEAPP untuk mengekstrak data telemetri dan koordinat GPS secara otomatis.</p>
+                        <p>Mengembangkan dan mengintegrasikan modul parser log penerbangan drone (.DAT, .TXT, .LOG) ke dalam ekosistem iLEAPP untuk mengekstrak data telemetri dan koordinat GPS.</p>
                         <div class="tech-stack">
                             <span>Python</span>
                             <span>iLEAPP</span>
                             <span>Autopsy</span>
-                            <span>Hamming Distance</span>
                         </div>
                     </div>
                 </div>
 
+                <!-- Riset 2: Steganography -->
                 <div class="project-card">
                     <div class="project-header">
                         <span class="folder-icon">📁</span>
@@ -123,7 +131,7 @@
                     </div>
                     <div class="project-body">
                         <h3>Steganalisis Berbasis LSB</h3>
-                        <p>Riset mengenai penyembunyian pesan rahasia menggunakan metode Least Significant Bit (LSB) pada citra digital, dilengkapi dengan analisis perbedaan piksel untuk mendeteksi anomali pada media penampung.</p>
+                        <p>Riset mengenai penyembunyian pesan rahasia menggunakan metode LSB pada citra digital, dilengkapi dengan analisis perbedaan piksel untuk deteksi anomali.</p>
                         <div class="tech-stack">
                             <span>Python</span>
                             <span>Image Processing</span>
@@ -132,13 +140,14 @@
                     </div>
                 </div>
 
+                <!-- Riset 3: Data Validation -->
                 <div class="project-card">
                     <div class="project-header">
                         <span class="folder-icon">📊</span>
                     </div>
                     <div class="project-body">
                         <h3>Metrik Validasi Forensik</h3>
-                        <p>Implementasi pemodelan matematika menggunakan MAPE (Mean Absolute Percentage Error) untuk menguji tingkat kesamaan data dan akurasi ekstraksi artefak antar berbagai alat uji forensik digital.</p>
+                        <p>Implementasi pemodelan matematika (MAPE) untuk menguji tingkat kesamaan data dan akurasi ekstraksi artefak antar berbagai alat uji forensik digital.</p>
                         <div class="tech-stack">
                             <span>Mathematics</span>
                             <span>Statistical Metrics</span>
@@ -147,64 +156,58 @@
                     </div>
                 </div>
 
-                <div class="project-card">
-                    <div class="project-header">
-                        <span class="folder-icon">🥤</span>
-                        <div class="project-links">
-                            <a href="dashboard-minuman.html" class="icon-link">↗</a>
-                        </div>
-                    </div>
-                    <div class="project-body">
-                        <h3>Dashboard Profil Minuman Kemasan</h3>
-                        <p>Pengembangan sistem profil produk bisnis terintegrasi dengan dashboard analitik penjualan, manajemen stok (SKU), dan visualisasi tren pasar komersial untuk industri minuman.</p>
-                        <div class="tech-stack">
-                            <span>Web Dev</span>
-                            <span>Business Intelligence</span>
-                            <span>Sales Tracking</span>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
     </section>
 
+    <!-- Portfolio Section (Tempat Khusus Dashboard Website) -->
     <section id="portfolio-preview" class="section bg-darker">
         <div class="container">
-            <h2 class="section-title">04. Portofolio & Dashboard</h2>
+            <h2 class="section-title">04. Portofolio Sistem & Dashboard</h2>
             <div class="about-grid" style="margin-bottom: 40px;">
                 <div class="about-text">
                     <p>
-                        Sebagai bentuk integrasi sistem dan pengolahan data, saya mengembangkan platform dashboard analitik interaktif untuk skenario riset keamanan siber maupun kebutuhan metrik bisnis komersial.
+                        Di luar publikasi riset, saya aktif mengembangkan antarmuka sistem (UI) dan platform dashboard analitik interaktif, baik untuk pemantauan keamanan (SOC) maupun untuk intelijen bisnis komersial.
                     </p>
                 </div>
             </div>
 
-            <div class="project-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
-                <div class="project-card" style="text-align: center; padding: 30px;">
-                    <p style="color: var(--accent); font-family: var(--font-mono); font-size: 0.85rem; margin-bottom: 10px;">VALIDATION ACCURACY</p>
-                    <h3 style="font-size: 2.5rem; margin-bottom: 5px;">99.9%</h3>
-                    <p style="font-size: 0.85rem;">iLEAPP Modul Integritas</p>
+            <!-- Grid Khusus Kartu Portofolio -->
+            <div class="project-grid">
+                
+                <!-- Portfolio 1: Forensic Dashboard -->
+                <div class="project-card" style="border-top: 3px solid var(--accent);">
+                    <div class="project-header">
+                        <span class="folder-icon">💻</span>
+                    </div>
+                    <div class="project-body">
+                        <h3 style="color: var(--text-primary);">Forensic Analytics Control Panel</h3>
+                        <p>Simulasi antarmuka <i>Cyber Security Operations Center</i> (CSOC) untuk memantau performa parser iLEAPP, integritas data artefak, dan log aktivitas secara real-time.</p>
+                        <div style="margin-top: 25px;">
+                            <a href="dashboard.html" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.85rem;">Buka Dashboard SOC →</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="project-card" style="text-align: center; padding: 30px;">
-                    <p style="color: var(--accent); font-family: var(--font-mono); font-size: 0.85rem; margin-bottom: 10px;">PROCESSED LOGS</p>
-                    <h3 style="font-size: 2.5rem; margin-bottom: 5px;">450+</h3>
-                    <p style="font-size: 0.85rem;">DJI Drone Flight Artifacts</p>
-                </div>
-                <div class="project-card" style="text-align: center; padding: 30px;">
-                    <p style="color: var(--accent); font-family: var(--font-mono); font-size: 0.85rem; margin-bottom: 10px;">MAPE ERROR RATE</p>
-                    <h3 style="font-size: 2.5rem; margin-bottom: 5px;">0.002</h3>
-                    <p style="font-size: 0.85rem;">Statistik Validasi Data</p>
-                </div>
-            </div>
 
-            <div style="text-align: center; margin-top: 50px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-                <a href="dashboard.html" class="btn btn-primary">Forensic Dashboard →</a>
-                <a href="dashboard-minuman.html" class="btn btn-secondary">Drink Profile Dashboard →</a>
+                <!-- Portfolio 2: Beverage Dashboard -->
+                <div class="project-card" style="border-top: 3px solid #ffbd2e;">
+                    <div class="project-header">
+                        <span class="folder-icon">🥤</span>
+                    </div>
+                    <div class="project-body">
+                        <h3 style="color: var(--text-primary);">Dashboard Profil Bisnis Minuman</h3>
+                        <p>Pengembangan sistem profil komersial yang terintegrasi dengan analitik penjualan, pelacakan manajemen stok (SKU), dan visualisasi performa produk e-commerce.</p>
+                        <div style="margin-top: 25px;">
+                            <a href="dashboard-minuman.html" class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.85rem; border-color: #ffbd2e; color: #ffbd2e; margin-left: 0;">Buka Dashboard Bisnis →</a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
+    <!-- Contact Section -->
     <section id="contact" class="section contact-section">
         <div class="container text-center">
             <p class="pre-title">05. Langkah Selanjutnya</p>
@@ -214,12 +217,14 @@
         </div>
     </section>
 
+    <!-- Footer -->
     <footer class="footer">
         <div class="container text-center">
             <p>&copy; 2026 Novi Adintya Putra, S.Kom., M.Kom. Built with HTML & CSS.</p>
         </div>
     </footer>
 
+    <!-- Script untuk Hamburger Menu Mobile -->
     <script>
         const mobileMenu = document.getElementById('mobile-menu');
         const navLinks = document.querySelector('.nav-links');
