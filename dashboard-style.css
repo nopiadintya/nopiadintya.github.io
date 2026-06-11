@@ -1,5 +1,5 @@
 /* =========================================
-   DARK THEME ENTERPRISE DASHBOARD (ENHANCED)
+   DARK THEME ENTERPRISE DASHBOARD (MOBILE FIXED)
    Novi Adintya Putra, S.Kom., M.Kom.
    ========================================= */
 
@@ -32,9 +32,10 @@ body {
     display: flex;
     min-height: 100vh;
     font-size: 14px;
+    overflow-x: hidden; /* Mencegah layar goyang ke samping */
 }
 
-/* SIDEBAR */
+/* ================== SIDEBAR ================== */
 .sidebar {
     width: 250px;
     background-color: var(--bg-sidebar);
@@ -47,6 +48,7 @@ body {
     left: 0;
     top: 0;
     border-right: 1px solid var(--border-color);
+    z-index: 100;
 }
 .sidebar .app-name { font-family: var(--font-mono); font-size: 1.1rem; font-weight: bold; color: var(--accent-orange); margin-bottom: 40px; text-align: center; }
 .sidebar-menu { list-style: none; }
@@ -54,82 +56,97 @@ body {
 .sidebar-menu a { text-decoration: none; color: var(--text-sidebar); display: flex; align-items: center; gap: 12px; padding: 10px 15px; border-radius: 4px; transition: var(--transition); }
 .sidebar-menu a:hover { background-color: rgba(255, 189, 46, 0.1); color: var(--accent-orange); }
 
-/* MAIN CONTENT & TOPBAR */
-.main-content { margin-left: 250px; flex: 1; display: flex; flex-direction: column; }
+/* ================== MAIN CONTENT ================== */
+.main-content { margin-left: 250px; flex: 1; display: flex; flex-direction: column; min-width: 0; /* Penting untuk mencegah flexbox meluber */ }
 .topbar { height: 70px; background-color: var(--bg-navbar); border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; padding: 0 30px; }
-.topbar .page-title { font-size: 1.3rem; font-weight: 600; color: var(--text-primary); }
+.topbar .page-title { font-size: 1.3rem; font-weight: 600; color: var(--text-primary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .topbar .user-profile { display: flex; align-items: center; gap: 10px; font-weight: 500; color: var(--text-primary); }
-.user-avatar { width: 35px; height: 35px; background-color: var(--bg-card); border: 1px solid var(--border-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+.user-avatar { width: 35px; height: 35px; background-color: var(--bg-card); border: 1px solid var(--border-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 
-/* KONTEN UTAMA */
 .content-body { padding: 30px; display: flex; flex-direction: column; gap: 20px; }
 
-/* BARU: MINI STATS GRID (HORIZONTAL TOP) */
-.mini-stats-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-}
-.mini-card {
-    background-color: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: 4px;
-    padding: 15px 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
+/* ================== GRIDS & CARDS ================== */
+.mini-stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.mini-card { background-color: var(--bg-card); border: 1px solid var(--border-color); border-radius: 4px; padding: 15px 20px; display: flex; flex-direction: column; justify-content: center; }
 .mini-card .mini-label { font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-secondary); text-transform: uppercase; }
 .mini-card .mini-value { font-size: 1.5rem; font-weight: 700; color: #fff; margin: 5px 0; }
 .mini-card .mini-sub { font-size: 0.8rem; }
 
-/* MAIN GRID (CHART & SUMMARY) */
 .dashboard-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; }
+.bottom-grid { display: grid; grid-template-columns: 7fr 3fr; gap: 20px; }
+
 .enterprise-card { background-color: var(--bg-card); border-radius: 4px; border: 1px solid var(--border-color); display: flex; flex-direction: column; overflow: hidden; }
 .card-header { background-color: rgba(2, 12, 27, 0.5); border-bottom: 1px solid var(--border-color); padding: 12px 20px; font-family: var(--font-mono); font-size: 0.8rem; text-transform: uppercase; color: var(--text-primary); }
 .card-body { padding: 20px; display: flex; flex-direction: column; flex: 1; }
 .card-body .stat-value { font-size: 2rem; font-weight: 700; margin: 10px 0; color: #fff; }
 
-/* PROGRESS BAR */
 .status-bar { width: 100%; height: 6px; background-color: #020c1b; border-radius: 4px; margin-top: 10px; overflow: hidden; }
 .progress { height: 100%; border-radius: 4px; }
 .progress-orange { background-color: var(--accent-orange); }
 
-/* GRAFIK BAR (CSS ONLY) */
+/* ================== CHARTS ================== */
 .chart-container { display: flex; align-items: flex-end; height: 160px; gap: 15px; padding-top: 20px; margin-top: 10px; border-bottom: 1px solid var(--border-color); }
 .chart-bar { flex: 1; background-color: var(--accent-orange); opacity: 0.8; border-radius: 4px 4px 0 0; transition: var(--transition); position: relative; display: flex; justify-content: center; }
-.chart-bar:hover { opacity: 1; transform: translateY(-3px); background-color: #ffe066; box-shadow: 0 0 10px rgba(255, 189, 46, 0.3); }
+.chart-bar:hover { opacity: 1; transform: translateY(-3px); }
 .chart-bar span { position: absolute; bottom: -25px; color: var(--text-secondary); font-size: 0.75rem; font-family: var(--font-mono); }
 .chart-bar .tooltip { position: absolute; top: -30px; background: #fff; color: #000; padding: 2px 6px; border-radius: 3px; font-size: 0.7rem; font-weight: bold; opacity: 0; transition: 0.2s; pointer-events: none; }
 .chart-bar:hover .tooltip { opacity: 1; top: -35px; }
 
-/* BARU: BOTTOM SECTION GRID (SPLIT COLUMN TABEL & AKTIVITAS) */
-.bottom-grid {
-    display: grid;
-    grid-template-columns: 7fr 3fr;
-    gap: 20px;
+/* ================== TABLES ================== */
+.table-responsive {
+    overflow-x: auto; /* Kunci utama agar tabel bisa di-scroll di HP */
+    -webkit-overflow-scrolling: touch;
 }
-
-/* TABEL */
-.log-table { width: 100%; border-collapse: collapse; }
-.log-table th { text-align: left; padding: 12px 15px; color: var(--text-secondary); border-bottom: 1px solid var(--border-color); font-size: 0.8rem; text-transform: uppercase; }
-.log-table td { padding: 12px 15px; border-bottom: 1px solid rgba(35, 53, 84, 0.5); color: var(--text-primary); }
+.log-table { width: 100%; border-collapse: collapse; min-width: 500px; /* Paksa lebar minimum agar tidak hancur */ }
+.log-table th { text-align: left; padding: 12px 15px; color: var(--text-secondary); border-bottom: 1px solid var(--border-color); font-size: 0.8rem; text-transform: uppercase; white-space: nowrap; }
+.log-table td { padding: 12px 15px; border-bottom: 1px solid rgba(35, 53, 84, 0.5); color: var(--text-primary); white-space: nowrap; }
 .table-status { padding: 3px 10px; border-radius: 10px; font-size: 0.7rem; font-weight: 700; }
 .table-status-green { background-color: rgba(100, 255, 218, 0.1); color: var(--accent-green); }
 .table-status-orange { background-color: rgba(255, 189, 46, 0.1); color: var(--accent-orange); }
 
-/* BARU: LIST AKTIVITAS REALTIME */
 .activity-list { list-style: none; display: flex; flex-direction: column; gap: 15px; }
 .activity-item { display: flex; flex-direction: column; border-bottom: 1px solid rgba(35, 53, 84, 0.3); padding-bottom: 10px; }
-.activity-item:last-child { border-bottom: none; padding-bottom: 0; }
 .activity-time { font-family: var(--font-mono); font-size: 0.7rem; color: var(--accent-orange); }
 .activity-text { font-size: 0.85rem; color: var(--text-primary); margin-top: 2px; }
 
+/* =================================================================
+   RESPONSIVE MOBILE / TABLET FIX (Penyelesaian Masalah Anda)
+   ================================================================= */
+
+/* 1. Layar Tablet (Ipad, Layar Sedang) */
 @media (max-width: 1024px) {
     .mini-stats-grid { grid-template-columns: repeat(2, 1fr); }
     .dashboard-grid, .bottom-grid { grid-template-columns: 1fr; }
-    .sidebar { width: 70px; padding: 10px; }
-    .sidebar .app-name { font-size: 0.7rem; }
-    .sidebar-menu a span { display: none; }
+    
+    /* Sidebar mengecil jadi ikon saja */
+    .sidebar { width: 70px; padding: 15px 10px; }
+    .sidebar .app-name { font-size: 0.7rem; word-break: break-all; }
+    .sidebar-menu a { justify-content: center; padding: 12px 0; }
+    .sidebar-menu a span { display: none; } /* Sembunyikan teks menu */
+    
     .main-content { margin-left: 70px; }
+}
+
+/* 2. Layar HP Pintar (Android/iPhone) */
+@media (max-width: 768px) {
+    /* Jadikan semua kartu 1 kolom memanjang ke bawah */
+    .mini-stats-grid { grid-template-columns: 1fr; }
+    
+    /* Kurangi padding luar agar tidak makan tempat */
+    .content-body { padding: 15px; gap: 15px; }
+    .topbar { padding: 0 15px; height: 60px; }
+    .topbar .page-title { font-size: 1rem; }
+    
+    /* Sembunyikan nama di pojok kanan atas, sisakan ikon orang saja */
+    .topbar .user-profile span { display: none; }
+    
+    /* Kurangi padding di dalam kartu */
+    .card-body { padding: 15px; }
+    
+    /* Perbaikan Grafik Donat agar tidak penyok */
+    .donut-container { flex-direction: column; text-align: center; gap: 15px; }
+    .donut-legend { align-items: center; }
+    
+    /* Perbaikan Tabel: Tambahkan area gulir */
+    .card-body { overflow-x: auto; }
 }
