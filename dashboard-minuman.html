@@ -8,16 +8,85 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Area Grafik Garis */
+        .line-chart-wrapper {
+            position: relative;
+            height: 180px;
+            width: 100%;
+            margin-top: 15px;
+        }
+        .line-chart {
+            width: 100%;
+            height: 100%;
+            overflow: visible;
+        }
+        .chart-point { transition: 0.3s; cursor: pointer; }
+        .chart-point:hover { r: 6; fill: var(--accent-orange); stroke: #fff; }
+        
+        .chart-labels-x {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            padding: 0 5px;
+        }
+
+        /* Area Grafik Donat (Pie Chart) */
+        .donut-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-top: 15px;
+        }
+        .donut-chart {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            /* Proporsi: Orange(45%), Teal(30%), Green(15%), Gray(10%) */
+            background: conic-gradient(
+                var(--accent-orange) 0% 45%,
+                var(--accent-teal) 45% 75%,
+                var(--accent-green) 75% 90%,
+                var(--border-color) 90% 100%
+            );
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        }
+        /* Membuat lubang di tengah agar menjadi donat */
+        .donut-chart::after {
+            content: "";
+            width: 65px;
+            height: 65px;
+            background-color: var(--bg-card);
+            border-radius: 50%;
+            position: absolute;
+        }
+        .donut-legend {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            font-size: 0.8rem;
+        }
+        .legend-item { display: flex; align-items: center; gap: 8px; color: var(--text-primary); }
+        .legend-dot { width: 10px; height: 10px; border-radius: 50%; }
+    </style>
 </head>
 <body>
 
     <nav class="sidebar">
         <div class="app-name">&lt;NAP/&gt; DEV</div>
         <ul class="sidebar-menu">
-            <li><a href="#" style="background-color: rgba(255,189,46,0.1); color:var(--accent-orange);"><span>Sub-Unit Bisnis</span></a></li>
-            <li><a href="#"><span>Manajemen Stok</span></a></li>
-            <li><a href="#"><span>Analisis Pasar</span></a></li>
-            <li><a href="#"><span>Mitra Reseller</span></a></li>
+            <li><a href="#" style="background-color: rgba(255,189,46,0.1); color:var(--accent-orange);"><span>🥤 Dashboard</span></a></li>
+            <li><a href="#"><span>📦 Manajemen Stok</span></a></li>
+            <li><a href="#"><span>📊 Analisis Pasar</span></a></li>
+            <li><a href="#"><span>🤝 Mitra Reseller</span></a></li>
             <li style="margin-top:auto;"><a href="index.html"><span>← Keluar Panel</span></a></li>
         </ul>
     </nav>
@@ -53,35 +122,56 @@
                 <div class="mini-card" style="border-left: 3px solid #ff5555;">
                     <div class="mini-label">CRITICAL SKU</div>
                     <div class="mini-value">1 Item</div>
-                    <div class="mini-sub" style="color: #ff5555;">Butuh Restock</div>
+                    <div class="mini-sub" style="color: #ff5555;">Butuh Restock segera</div>
                 </div>
             </div>
             
             <div class="dashboard-grid">
                 
                 <div class="enterprise-card">
-                    <div class="card-header">GRAFIK TREN OMSET BULANAN (JUTA RUPIAH)</div>
+                    <div class="card-header" style="border-top: 3px solid var(--accent-orange);">GRAFIK TREN OMSET BULANAN (JUTA RUPIAH)</div>
                     <div class="card-body">
-                        <div class="chart-container">
-                            <div class="chart-bar" style="height: 40%;"><div class="tooltip">40M</div><span>Jan</span></div>
-                            <div class="chart-bar" style="height: 55%;"><div class="tooltip">55M</div><span>Feb</span></div>
-                            <div class="chart-bar" style="height: 70%;"><div class="tooltip">70M</div><span>Mar</span></div>
-                            <div class="chart-bar" style="height: 60%;"><div class="tooltip">60M</div><span>Apr</span></div>
-                            <div class="chart-bar" style="height: 95%;"><div class="tooltip">128.5M</div><span style="color: var(--accent-orange); font-weight:bold;">Mei</span></div>
+                        <div class="line-chart-wrapper">
+                            <svg viewBox="0 -10 400 120" class="line-chart" preserveAspectRatio="none">
+                                <defs>
+                                    <linearGradient id="areaGradient" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0%" stop-color="rgba(255, 189, 46, 0.4)" />
+                                        <stop offset="100%" stop-color="rgba(255, 189, 46, 0.0)" />
+                                    </linearGradient>
+                                </defs>
+                                <path d="M0,70 L100,50 L200,30 L300,45 L400,0 L400,100 L0,100 Z" fill="url(#areaGradient)" />
+                                
+                                <path d="M0,70 L100,50 L200,30 L300,45 L400,0" fill="none" stroke="var(--accent-orange)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                                
+                                <circle cx="0" cy="70" r="4" fill="var(--bg-card)" stroke="var(--accent-orange)" stroke-width="2" class="chart-point"><title>Jan: Rp 40 Juta</title></circle>
+                                <circle cx="100" cy="50" r="4" fill="var(--bg-card)" stroke="var(--accent-orange)" stroke-width="2" class="chart-point"><title>Feb: Rp 55 Juta</title></circle>
+                                <circle cx="200" cy="30" r="4" fill="var(--bg-card)" stroke="var(--accent-orange)" stroke-width="2" class="chart-point"><title>Mar: Rp 70 Juta</title></circle>
+                                <circle cx="300" cy="45" r="4" fill="var(--bg-card)" stroke="var(--accent-orange)" stroke-width="2" class="chart-point"><title>Apr: Rp 60 Juta</title></circle>
+                                <circle cx="400" cy="0" r="4" fill="#fff" stroke="var(--accent-orange)" stroke-width="2" class="chart-point"><title>Mei: Rp 128.5 Juta</title></circle>
+                            </svg>
+                        </div>
+                        <div class="chart-labels-x">
+                            <span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span style="color:var(--accent-orange); font-weight:bold;">Mei</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="enterprise-card">
-                    <div class="card-header">DISTRIBUSI MITRA</div>
+                    <div class="card-header">DISTRIBUSI PRODUK (MARKET SHARE)</div>
                     <div class="card-body">
-                        <div>
-                            <p style="color: var(--text-secondary); font-weight: bold; font-size: 0.85rem;">RESELLER AKTIF Q2</p>
-                            <div class="stat-value" style="color: var(--accent-orange); font-size: 2.2rem; margin: 5px 0;">124</div>
+                        <div class="donut-container">
+                            <div class="donut-chart">
+                                <span style="position: absolute; z-index: 10; font-family: var(--font-mono); font-weight: bold; font-size: 0.9rem;">100%</span>
+                            </div>
+                            <div class="donut-legend">
+                                <div class="legend-item"><div class="legend-dot" style="background: var(--accent-orange);"></div> Orange Splash (45%)</div>
+                                <div class="legend-item"><div class="legend-dot" style="background: var(--accent-teal);"></div> Berry Fresh (30%)</div>
+                                <div class="legend-item"><div class="legend-dot" style="background: var(--accent-green);"></div> Cool Mint (15%)</div>
+                                <div class="legend-item"><div class="legend-dot" style="background: var(--border-color);"></div> Lainnya (10%)</div>
+                            </div>
                         </div>
-                        <div class="status-bar"><div class="progress progress-orange" style="width: 82%;"></div></div>
-                        <p style="color: var(--text-secondary); font-size: 0.8rem; margin-top: 15px; line-height: 1.4;">
-                            82% dari target pemetaan ekspansi terpenuhi. Penambahan area fokus logistik baru: Kabupaten Sanggau.
+                        <p style="color: var(--text-secondary); font-size: 0.8rem; margin-top: 25px; line-height: 1.4; border-top: 1px solid var(--border-color); padding-top: 15px;">
+                            Varian <i>Orange Splash</i> mendominasi pangsa pasar Q2. Kampanye promosi difokuskan pada area distributor tingkat 2.
                         </p>
                     </div>
                 </div>
@@ -152,7 +242,11 @@
                     </div>
                 </div>
 
-            </div> </div> <footer style="padding: 20px 30px; text-align: center; color: var(--text-secondary); font-size: 0.8rem; border-top: 1px solid var(--border-color);">
+            </div>
+            
+        </div>
+
+        <footer style="padding: 20px 30px; text-align: center; color: var(--text-secondary); font-size: 0.8rem; border-top: 1px solid var(--border-color);">
             Copyright © 2026 Novi Adintya Putra. Commercial Intelligence Platform.
         </footer>
     </main>
