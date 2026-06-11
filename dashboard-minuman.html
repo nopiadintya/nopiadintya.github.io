@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id" class="dark-theme">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Bisnis Minuman | NAP</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --drink-accent: #ffbd2e; /* Warna Orange Segar */
+            --bg-card: #112240;
+        }
+        .dashboard-container { padding: 120px 0 60px 0; min-height: 100vh; }
+        .db-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin-bottom: 30px; }
+        .db-card { background: var(--bg-card); padding: 25px; border-radius: 8px; border: 1px solid #233554; }
+        .db-card h4 { font-family: var(--font-mono); font-size: 0.8rem; color: var(--drink-accent); margin-bottom: 10px; }
+        .db-card .value { font-size: 1.8rem; font-weight: 700; color: #fff; }
+        
+        .product-list { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        .product-list th { text-align: left; padding: 12px; color: var(--drink-accent); border-bottom: 1px solid #233554; }
+        .product-list td { padding: 12px; border-bottom: 1px solid #1d2d44; color: var(--text-secondary); }
+        
+        .progress-bar { width: 100%; height: 8px; background: #233554; border-radius: 4px; margin-top: 10px; }
+        .progress-fill { height: 100%; background: var(--drink-accent); border-radius: 4px; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">&lt;NAP/&gt;</a>
+            <ul class="nav-links">
+                <li><a href="index.html">← Kembali ke Beranda</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="dashboard-container container">
+        <div style="margin-bottom: 40px;">
+            <h2 style="font-size: 2rem; color: #fff;">FreshDrink Product Analytics</h2>
+            <p style="font-family: var(--font-mono); color: var(--drink-accent);">Business Unit: Beverage Division // Admin: Novi Adintya Putra</p>
+        </div>
+
+        <div class="db-grid">
+            <div class="db-card">
+                <h4>TOTAL SALES</h4>
+                <div class="value">Rp 128.5M</div>
+                <p style="font-size: 0.8rem; color: #64ffda;">↑ 24% Growth</p>
+            </div>
+            <div class="db-card">
+                <h4>UNITS PRODUCED</h4>
+                <div class="value">45,200</div>
+                <p style="font-size: 0.8rem; color: var(--text-secondary);">Bottles/Month</p>
+            </div>
+            <div class="db-card">
+                <h4>ACTIVE RESELLERS</h4>
+                <div class="value">124</div>
+                <p style="font-size: 0.8rem; color: var(--text-secondary);">Verified Partners</p>
+            </div>
+            <div class="db-card">
+                <h4>CUSTOMER RATING</h4>
+                <div class="value">4.8/5.0</div>
+                <p style="font-size: 0.8rem; color: var(--drink-accent);">Customer Satisfaction</p>
+            </div>
+        </div>
+
+        <div class="db-card">
+            <h4>BEST SELLING PRODUCTS</h4>
+            <table class="product-list">
+                <thead>
+                    <tr>
+                        <th>PRODUCT NAME</th>
+                        <th>STOCK LEVEL</th>
+                        <th>MONTHLY REVENUE</th>
+                        <th>POPULARITY</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Orange Splash 250ml</td>
+                        <td>85%</td>
+                        <td>Rp 45.000.000</td>
+                        <td><div class="progress-bar"><div class="progress-fill" style="width: 90%;"></div></div></td>
+                    </tr>
+                    <tr>
+                        <td>Berry Fresh Eco-Pack</td>
+                        <td>42%</td>
+                        <td>Rp 32.200.000</td>
+                        <td><div class="progress-bar"><div class="progress-fill" style="width: 70%;"></div></div></td>
+                    </tr>
+                    <tr>
+                        <td>Cool Mint Tea</td>
+                        <td>12%</td>
+                        <td>Rp 15.500.000</td>
+                        <td><div class="progress-bar"><div class="progress-fill" style="width: 35%; background: #ff5555;"></div></div></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="db-card" style="margin-top: 30px; border-left: 4px solid var(--drink-accent);">
+            <h4>STRATEGIC INSIGHT</h4>
+            <p style="color: var(--text-primary); margin-top: 10px;">
+                Berdasarkan analitik data penjualan, produk <strong>Cool Mint Tea</strong> memerlukan restock segera dalam 48 jam ke depan. Disarankan untuk meningkatkan kampanye pemasaran pada varian <strong>Berry Fresh</strong> untuk menghabiskan stok batch produksi lama.
+            </p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container text-center">
+            <p>&copy; 2026 Novi Adintya Putra. Commercial Project Portfolio.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
