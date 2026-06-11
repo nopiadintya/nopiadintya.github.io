@@ -5,19 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portofolio Profesional | Novi Adintya Putra, S.Kom., M.Kom.</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Google Fonts for modern tech typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="#" class="logo">NAP</a>
+            <a href="#" class="logo">&lt;NAP/&gt;</a>
             
-            <!-- Hamburger Menu Icon -->
             <div class="menu-toggle" id="mobile-menu">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -27,14 +24,13 @@
             <ul class="nav-links">
                 <li><a href="#about">Tentang</a></li>
                 <li><a href="#experience">Pendidikan</a></li>
-                <li><a href="#research">Riset & Proyek</a></li>
-                <li><a href="dashboard.html" class="accent-text" style="font-weight:bold;">Portofolio</a></li>
+                <li><a href="#research">Riset</a></li>
+                <li><a href="#portfolio-preview">Portofolio</a></li>
                 <li><a href="#contact">Kontak</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <header class="hero">
         <div class="container">
             <div class="hero-content">
@@ -52,10 +48,9 @@
         </div>
     </header>
 
-    <!-- About Section -->
     <section id="about" class="section">
         <div class="container">
-            <h2 class="section-title">Tentang Saya</h2>
+            <h2 class="section-title">01. Tentang Saya</h2>
             <div class="about-grid">
                 <div class="about-text">
                     <p>
@@ -69,10 +64,9 @@
         </div>
     </section>
 
-    <!-- Experience & Education Section -->
     <section id="experience" class="section bg-darker">
         <div class="container">
-            <h2 class="section-title">Pendidikan & Latar Belakang</h2>
+            <h2 class="section-title">02. Pendidikan & Latar Belakang</h2>
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
@@ -96,22 +90,20 @@
         </div>
     </section>
 
-    <!-- Research & Projects Section -->
     <section id="research" class="section">
         <div class="container">
-            <h2 class="section-title">Riset & Proyek Terpilih</h2>
+            <h2 class="section-title">03. Riset & Proyek Terpilih</h2>
             <div class="project-grid">
                 
-                <!-- Project 1: Digital Forensics -->
                 <div class="project-card">
                     <div class="project-header">
                         <span class="folder-icon">📁</span>
                         <div class="project-links">
-                            <a href="#" class="icon-link" aria-label="GitHub Link">⎇</a>
+                            <a href="detail-proyek.html" class="icon-link" aria-label="Detail Proyek">↗</a>
                         </div>
                     </div>
                     <div class="project-body">
-                        <h3>Drone Flight Logs Parser to iLEAPP</h3>
+                        <h3><a href="detail-proyek.html" style="color: inherit; text-decoration: none;">Drone Flight Logs Parser to iLEAPP</a></h3>
                         <p>Mengembangkan dan mengintegrasikan modul parser log penerbangan drone (format .DAT, .TXT, .LOG dari perangkat DJI) ke dalam ekosistem iLEAPP untuk mengekstrak data telemetri dan koordinat GPS secara otomatis.</p>
                         <div class="tech-stack">
                             <span>Python</span>
@@ -122,7 +114,6 @@
                     </div>
                 </div>
 
-                <!-- Project 2: Steganography -->
                 <div class="project-card">
                     <div class="project-header">
                         <span class="folder-icon">📁</span>
@@ -141,7 +132,6 @@
                     </div>
                 </div>
 
-                <!-- Project 3: Data Validation -->
                 <div class="project-card">
                     <div class="project-header">
                         <span class="folder-icon">📊</span>
@@ -157,16 +147,35 @@
                     </div>
                 </div>
 
+                <div class="project-card">
+                    <div class="project-header">
+                        <span class="folder-icon">🥤</span>
+                        <div class="project-links">
+                            <a href="dashboard-minuman.html" class="icon-link">↗</a>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <h3>Dashboard Profil Minuman Kemasan</h3>
+                        <p>Pengembangan sistem profil produk bisnis terintegrasi dengan dashboard analitik penjualan, manajemen stok (SKU), dan visualisasi tren pasar komersial untuk industri minuman.</p>
+                        <div class="tech-stack">
+                            <span>Web Dev</span>
+                            <span>Business Intelligence</span>
+                            <span>Sales Tracking</span>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
-<section id="portfolio-preview" class="section bg-darker">
+
+    <section id="portfolio-preview" class="section bg-darker">
         <div class="container">
-            <h2 class="section-title">Portofolio</h2>
+            <h2 class="section-title">04. Portofolio & Dashboard</h2>
             <div class="about-grid" style="margin-bottom: 40px;">
                 <div class="about-text">
                     <p>
-                        Sebagai bagian dari transparansi riset, saya mengintegrasikan sistem pemantauan data untuk setiap artefak digital yang dianalisis. Berikut adalah ringkasan performa modul parser dan tingkat akurasi algoritma yang telah dikembangkan.
+                        Sebagai bentuk integrasi sistem dan pengolahan data, saya mengembangkan platform dashboard analitik interaktif untuk skenario riset keamanan siber maupun kebutuhan metrik bisnis komersial.
                     </p>
                 </div>
             </div>
@@ -189,30 +198,28 @@
                 </div>
             </div>
 
-            <div style="text-align: center; margin-top: 50px;">
-                <p style="margin-bottom: 25px; font-style: italic; font-size: 0.9rem;">*Data di atas diambil secara real-time dari sistem analitik forensik.</p>
-                <a href="dashboard.html" class="btn btn-primary">Buka Dashboard Portofolio Lengkap →</a>
+            <div style="text-align: center; margin-top: 50px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                <a href="dashboard.html" class="btn btn-primary">Forensic Dashboard →</a>
+                <a href="dashboard-minuman.html" class="btn btn-secondary">Drink Profile Dashboard →</a>
             </div>
         </div>
     </section>
-    <!-- Contact Section -->
+
     <section id="contact" class="section contact-section">
         <div class="container text-center">
-            <p class="pre-title">Kontak</p>
+            <p class="pre-title">05. Langkah Selanjutnya</p>
             <h2 class="contact-heading">Hubungi Saya</h2>
-            <p class="contact-lead">Kotak masuk saya selalu terbuka untuk kolaborasi riset, pengembangan proyek *open-source*, maupun diskusi profesional seputar investigasi forensik digital.</p>
-            <a href="mailto:nopiadintya24@gmail.com" class="btn btn-primary btn-large">Kirim Pesan</a>
+            <p class="contact-lead">Kotak masuk saya selalu terbuka untuk kolaborasi riset, pengembangan proyek open-source, maupun diskusi profesional seputar investigasi forensik digital dan solusi IT.</p>
+            <a href="mailto:nopiadintya@example.com" class="btn btn-primary btn-large">Kirim Pesan</a>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container text-center">
             <p>&copy; 2026 Novi Adintya Putra, S.Kom., M.Kom. Built with HTML & CSS.</p>
         </div>
     </footer>
 
-    <!-- Script untuk Hamburger Menu -->
     <script>
         const mobileMenu = document.getElementById('mobile-menu');
         const navLinks = document.querySelector('.nav-links');
