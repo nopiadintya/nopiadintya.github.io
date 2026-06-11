@@ -1,23 +1,22 @@
 /* =========================================
-   CSS KHUSUS UNTUK MODEL DASHBOARD APLIKASI
+   DARK THEME ENTERPRISE DASHBOARD
    Novi Adintya Putra, S.Kom., M.Kom.
-   Inspired by Enterprise Admin Panel (Light Theme)
    ========================================= */
 
 :root {
-    --bg-body: #f4f6f8;        /* Light Gray Background */
-    --bg-sidebar: #1d2d44;     /* Dark Slate Sidebar */
-    --bg-navbar: #ffffff;      /* White Topbar */
-    --bg-card: #ffffff;        /* White Cards */
-    --text-primary: #2c3e50;   /* Dark Text */
-    --text-secondary: #7f8c8d; /* Muted Text */
-    --text-sidebar: #ccd6f6;  /* Light text in sidebar */
+    --bg-body: #0a192f;        /* Latar belakang utama (Dark Blue/Slate) */
+    --bg-sidebar: #020c1b;     /* Sidebar sangat gelap */
+    --bg-navbar: #0a192f;      /* Topbar selaras dengan background */
+    --bg-card: #112240;        /* Kartu sedikit lebih terang */
+    --text-primary: #ccd6f6;   /* Teks utama (Light Gray) */
+    --text-secondary: #8892b0; /* Teks sekunder (Muted) */
+    --text-sidebar: #a8b2d1;   /* Teks sidebar */
     
-    /* Warna Aksen dari Gambar image_8.png */
-    --accent-green: #28a745;   /* Success/Complete */
-    --accent-orange: #ffc107;  /* Warning/Pending */
-    --accent-teal: #17a2b8;    /* Info/System */
-    --border-color: #e2e8f0;   /* Light borders */
+    /* Warna Aksen */
+    --accent-green: #64ffda;   /* Cyan/Teal ala Cyber */
+    --accent-orange: #ffbd2e;  /* Orange segar untuk bisnis */
+    --accent-teal: #0ea5e9;    /* Biru informasi */
+    --border-color: #233554;   /* Garis batas gelap */
     
     --font-sans: 'Inter', -apple-system, sans-serif;
     --font-mono: 'Fira Code', monospace;
@@ -30,14 +29,12 @@ body {
     font-family: var(--font-sans);
     color: var(--text-primary);
     background-color: var(--bg-body);
-    display: flex; /* Untuk layout Sidebar + Konten */
+    display: flex;
     min-height: 100vh;
     font-size: 14px;
 }
 
-/* =========================================
-   1. SIDEBAR NAVIGASI (KIRI)
-   ========================================= */
+/* SIDEBAR */
 .sidebar {
     width: 250px;
     background-color: var(--bg-sidebar);
@@ -49,218 +46,60 @@ body {
     height: 100vh;
     left: 0;
     top: 0;
+    border-right: 1px solid var(--border-color);
 }
-
-.sidebar .app-name {
-    font-family: var(--font-mono);
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: #fff;
-    margin-bottom: 40px;
-    text-align: center;
-}
-
+.sidebar .app-name { font-family: var(--font-mono); font-size: 1.1rem; font-weight: bold; color: var(--accent-green); margin-bottom: 40px; text-align: center; }
 .sidebar-menu { list-style: none; }
 .sidebar-menu li { margin-bottom: 10px; }
-.sidebar-menu a {
-    text-decoration: none;
-    color: var(--text-sidebar);
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 10px 15px;
-    border-radius: 4px;
-    transition: var(--transition);
-}
+.sidebar-menu a { text-decoration: none; color: var(--text-sidebar); display: flex; align-items: center; gap: 12px; padding: 10px 15px; border-radius: 4px; transition: var(--transition); }
+.sidebar-menu a:hover { background-color: rgba(100, 255, 218, 0.1); color: var(--accent-green); }
 
-.sidebar-menu a:hover {
-    background-color: rgba(255, 255, 255, 0.05);
-    color: #fff;
-}
+/* MAIN CONTENT & TOPBAR */
+.main-content { margin-left: 250px; flex: 1; display: flex; flex-direction: column; }
+.topbar { height: 70px; background-color: var(--bg-navbar); border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; padding: 0 30px; }
+.topbar .page-title { font-size: 1.3rem; font-weight: 600; color: var(--text-primary); }
+.topbar .user-profile { display: flex; align-items: center; gap: 10px; font-weight: 500; color: var(--text-primary); }
+.user-avatar { width: 35px; height: 35px; background-color: var(--bg-card); border: 1px solid var(--border-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
 
-/* =========================================
-   2. KONTEN UTAMA (KANAN)
-   ========================================= */
-.main-content {
-    margin-left: 250px; /* Lebar Sidebar */
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
+/* KONTEN & GRID */
+.content-body { padding: 30px; display: flex; flex-direction: column; gap: 20px; }
+.dashboard-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 20px; }
+.enterprise-card { background-color: var(--bg-card); border-radius: 4px; border: 1px solid var(--border-color); display: flex; flex-direction: column; overflow: hidden; }
+.card-header { background-color: rgba(2, 12, 27, 0.5); border-bottom: 1px solid var(--border-color); padding: 12px 20px; font-family: var(--font-mono); font-size: 0.8rem; text-transform: uppercase; color: var(--text-primary); }
+.card-body { padding: 20px; display: flex; flex-direction: column; flex: 1; }
+.card-body .stat-value { font-size: 2rem; font-weight: 700; margin: 10px 0; color: #fff; }
+.card-body .stat-desc { color: var(--text-secondary); font-size: 0.85rem; }
 
-/* Top Navigation Bar */
-.topbar {
-    height: 70px;
-    background-color: var(--bg-navbar);
-    border-bottom: 1px solid var(--border-color);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 30px;
-}
-
-.topbar .page-title {
-    font-size: 1.3rem;
-    font-weight: 600;
-}
-
-.topbar .user-profile {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-weight: 500;
-}
-
-.user-avatar {
-    width: 35px;
-    height: 35px;
-    background-color: #ddd;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--text-secondary);
-}
-
-/* Area Isi Konten */
-.content-body {
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-/* =========================================
-   3. KARTU & GRID (SEPERTI IMAGE_8.PNG)
-   ========================================= */
-/* Grid Utama untuk Konten */
-.dashboard-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr; /* Model L-Shape mirip gambar */
-    gap: 20px;
-}
-
-.enterprise-card {
-    background-color: var(--bg-card);
-    border-radius: 4px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-}
-
-/* Header Kartu (Warna Gelap di atas) */
-.card-header {
-    background-color: var(--bg-sidebar);
-    color: #fff;
-    padding: 12px 20px;
-    font-family: var(--font-mono);
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-/* Isi Kartu (Warna Putih) */
-.card-body {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-}
-
-/* Value Statistik Besar */
-.card-body .stat-value {
-    font-size: 2rem;
-    font-weight: 700;
-    margin: 10px 0;
-}
-
-/* Text Deskripsi Muted */
-.card-body .stat-desc {
-    color: var(--text-secondary);
-    font-size: 0.85rem;
-}
-
-/* Status Pill Warni-warni */
-.status-bar {
-    width: 100%;
-    height: 8px;
-    background-color: var(--border-color);
-    border-radius: 4px;
-    margin-top: 10px;
-    overflow: hidden;
-}
-
+/* PROGRESS & BUTTONS */
+.status-bar { width: 100%; height: 8px; background-color: #020c1b; border-radius: 4px; margin-top: 10px; overflow: hidden; }
 .progress { height: 100%; border-radius: 4px; }
 .progress-green { background-color: var(--accent-green); }
 .progress-orange { background-color: var(--accent-orange); }
-.progress-teal { background-color: var(--accent-teal); }
 
-/* Tombol Aksi di Kartu */
-.card-action-btn {
-    display: inline-block;
-    padding: 8px 15px;
-    background-color: transparent;
-    border: 1px solid var(--accent-teal);
-    color: var(--accent-teal);
-    text-decoration: none;
-    border-radius: 4px;
-    font-size: 0.85rem;
-    font-weight: 500;
-    margin-top: 15px;
-    align-self: flex-start;
-    transition: var(--transition);
-}
+.card-action-btn { display: inline-block; padding: 8px 15px; background-color: transparent; border: 1px solid var(--accent-green); color: var(--accent-green); text-decoration: none; border-radius: 4px; font-size: 0.85rem; font-weight: 500; margin-top: 15px; align-self: flex-start; transition: var(--transition); }
+.card-action-btn:hover { background-color: rgba(100, 255, 218, 0.1); }
 
-.card-action-btn:hover {
-    background-color: var(--accent-teal);
-    color: #fff;
-}
+/* GRAFIK BAR (CSS ONLY) */
+.chart-container { display: flex; align-items: flex-end; height: 150px; gap: 15px; padding-top: 20px; margin-top: 10px; border-bottom: 1px solid var(--border-color); }
+.chart-bar { flex: 1; background-color: var(--accent-orange); opacity: 0.8; border-radius: 4px 4px 0 0; transition: var(--transition); position: relative; display: flex; justify-content: center; }
+.chart-bar:hover { opacity: 1; transform: translateY(-5px); }
+.chart-bar span { position: absolute; bottom: -25px; color: var(--text-secondary); font-size: 0.75rem; font-family: var(--font-mono); }
+.chart-bar .tooltip { position: absolute; top: -30px; background: #fff; color: #000; padding: 2px 6px; border-radius: 3px; font-size: 0.7rem; font-weight: bold; opacity: 0; transition: 0.2s; }
+.chart-bar:hover .tooltip { opacity: 1; top: -35px; }
 
-/* =========================================
-   4. TABEL LOG FORENSIK (SEPERTI IMAGE_8.PNG)
-   ========================================= */
-.table-card {
-    grid-column: 1 / -1; /* Menggunakan seluruh lebar grid */
-}
+/* TABEL */
+.table-card { grid-column: 1 / -1; }
+.log-table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+.log-table th { text-align: left; padding: 12px 15px; color: var(--text-secondary); border-bottom: 1px solid var(--border-color); font-size: 0.8rem; text-transform: uppercase; }
+.log-table td { padding: 12px 15px; border-bottom: 1px solid rgba(35, 53, 84, 0.5); color: var(--text-primary); }
+.table-status { padding: 3px 10px; border-radius: 10px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; }
+.table-status-green { background-color: rgba(100, 255, 218, 0.1); color: var(--accent-green); }
+.table-status-orange { background-color: rgba(255, 189, 46, 0.1); color: var(--accent-orange); }
 
-.log-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-}
-
-.log-table th {
-    text-align: left;
-    padding: 12px 15px;
-    color: var(--text-secondary);
-    border-bottom: 1px solid var(--border-color);
-    font-size: 0.8rem;
-    text-transform: uppercase;
-}
-
-.log-table td {
-    padding: 12px 15px;
-    border-bottom: 1px solid #f0f3f7;
-    color: var(--text-primary);
-}
-
-.table-status {
-    padding: 3px 10px;
-    border-radius: 10px;
-    font-size: 0.7rem;
-    font-weight: 700;
-    text-transform: uppercase;
-}
-
-.table-status-green { background-color: rgba(40, 167, 69, 0.1); color: var(--accent-green); }
-.table-status-orange { background-color: rgba(255, 193, 7, 0.1); color: var(--accent-orange); }
-
-/* responsive */
 @media (max-width: 992px) {
     .dashboard-grid { grid-template-columns: 1fr; }
     .sidebar { width: 70px; padding: 10px; }
-    .sidebar .app-name { font-size: 0.9rem; margin-bottom: 20px; }
-    .sidebar-menu a span { display: none; } /* Sembunyikan teks menu */
+    .sidebar .app-name { font-size: 0.7rem; margin-bottom: 20px; }
+    .sidebar-menu a span { display: none; }
     .main-content { margin-left: 70px; }
 }
