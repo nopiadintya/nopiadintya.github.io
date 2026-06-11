@@ -8,6 +8,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .cyber-bar { background-color: var(--accent-green) !important; }
+        .cyber-bar:hover { background-color: #a7ffeb !important; box-shadow: 0 0 12px rgba(100, 255, 218, 0.4) !important; }
+        .progress-cyber { background-color: var(--accent-green) !important; }
+        .text-cyber { color: var(--accent-green) !important; }
+        .border-cyber { border-left: 3px solid var(--accent-green) !important; border-top-color: var(--accent-green) !important; }
+    </style>
 </head>
 <body>
 
@@ -18,7 +25,7 @@
             <li><a href="#"><span>📂 Logs Artefak</span></a></li>
             <li><a href="#"><span>📊 Status iLEAPP</span></a></li>
             <li><a href="#"><span>🔭 Steganalisis</span></a></li>
-            <li style="margin-top:auto;"><a href="index.html"><span>← Beranda Utama</span></a></li>
+            <li style="margin-top:auto;"><a href="index.html"><span>← Keluar Panel</span></a></li>
         </ul>
     </nav>
 
@@ -34,36 +41,65 @@
 
         <div class="content-body">
             
+            <div class="mini-stats-grid">
+                <div class="mini-card border-cyber">
+                    <div class="mini-label">TOTAL ARTEFAK</div>
+                    <div class="mini-value">12,842</div>
+                    <div class="mini-sub text-cyber">Terekstrak Sempurna</div>
+                </div>
+                <div class="mini-card border-cyber">
+                    <div class="mini-label">DRONE LOGS (DJI)</div>
+                    <div class="mini-value">456</div>
+                    <div class="mini-sub" style="color: var(--text-secondary);">.DAT & .TXT Files</div>
+                </div>
+                <div class="mini-card border-cyber">
+                    <div class="mini-label">INTEGRITAS DATA</div>
+                    <div class="mini-value">0.0024</div>
+                    <div class="mini-sub text-cyber">Avg MAPE (Akurat)</div>
+                </div>
+                <div class="mini-card" style="border-left: 3px solid #0ea5e9;">
+                    <div class="mini-label">UPTIME iLEAPP</div>
+                    <div class="mini-value">99.9%</div>
+                    <div class="mini-sub" style="color: #0ea5e9;">Modul Parser Aktif</div>
+                </div>
+            </div>
+            
             <div class="dashboard-grid">
                 
-                <div class="enterprise-card" style="grid-column: 1 / 3;">
-                    <div class="card-header" style="border-top: 3px solid var(--accent-green);">LOG AKTIVITAS PARSER (MINGGU INI)</div>
+                <div class="enterprise-card">
+                    <div class="card-header border-cyber" style="border-top: 3px solid;">LOG AKTIVITAS PARSER (MINGGU INI)</div>
                     <div class="card-body">
                         <div class="chart-container">
-                            <div class="chart-bar" style="height: 30%; background-color: var(--accent-green);"><div class="tooltip">120</div><span>Sen</span></div>
-                            <div class="chart-bar" style="height: 50%; background-color: var(--accent-green);"><div class="tooltip">254</div><span>Sel</span></div>
-                            <div class="chart-bar" style="height: 40%; background-color: var(--accent-green);"><div class="tooltip">180</div><span>Rab</span></div>
-                            <div class="chart-bar" style="height: 80%; background-color: var(--accent-green);"><div class="tooltip">390</div><span>Kam</span></div>
-                            <div class="chart-bar" style="height: 95%; background-color: var(--accent-green);"><div class="tooltip">456</div><span style="color: var(--accent-green); font-weight:bold;">Jum</span></div>
+                            <div class="chart-bar cyber-bar" style="height: 30%;"><div class="tooltip">120</div><span>Sen</span></div>
+                            <div class="chart-bar cyber-bar" style="height: 50%;"><div class="tooltip">254</div><span>Sel</span></div>
+                            <div class="chart-bar cyber-bar" style="height: 40%;"><div class="tooltip">180</div><span>Rab</span></div>
+                            <div class="chart-bar cyber-bar" style="height: 80%;"><div class="tooltip">390</div><span>Kam</span></div>
+                            <div class="chart-bar cyber-bar" style="height: 95%;"><div class="tooltip">456</div><span class="text-cyber" style="font-weight:bold;">Jum</span></div>
                         </div>
                     </div>
                 </div>
 
                 <div class="enterprise-card">
-                    <div class="card-header">SISTEM & INTEGRITAS</div>
+                    <div class="card-header">SISTEM & VALIDASI</div>
                     <div class="card-body">
                         <div>
-                            <p style="color: var(--text-secondary); font-weight: bold;">Validasi Data (MAPE)</p>
-                            <div class="stat-value" style="color: var(--accent-green);">0.0024 <span style="font-size:1rem; color:var(--accent-green);">Akurat</span></div>
+                            <p style="color: var(--text-secondary); font-weight: bold; font-size: 0.85rem;">STATUS INTEGRASI</p>
+                            <div class="stat-value text-cyber" style="font-size: 2.2rem; margin: 5px 0;">SECURE</div>
                         </div>
-                        <div class="status-bar"><div class="progress progress-green" style="width: 99%;"></div></div>
-                        <p class="stat-desc" style="margin-top: 10px;">iLEAPP Modul Utama: 99.9% Uptime</p>
+                        <div class="status-bar"><div class="progress progress-cyber" style="width: 100%;"></div></div>
+                        <p style="color: var(--text-secondary); font-size: 0.8rem; margin-top: 15px; line-height: 1.4;">
+                            Tidak terdeteksi anomali *hash* pada direktori ekstraksi. Pemodelan matematika menunjukkan kesamaan data absolut dengan komparator alat komersial.
+                        </p>
                     </div>
                 </div>
 
-                <div class="enterprise-card table-card">
+            </div> 
+
+            <div class="bottom-grid">
+                
+                <div class="enterprise-card">
                     <div class="card-header">LOG ARTEFAK FORENSIK TERBARU</div>
-                    <div class="card-body">
+                    <div class="card-body" style="padding: 10px 0 0 0;">
                         <table class="log-table">
                             <thead>
                                 <tr>
@@ -75,38 +111,55 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>2026-06-11 22:05</td>
+                                    <td><span style="font-family: var(--font-mono); font-size:0.8rem;">2026-06-11 22:05</span></td>
                                     <td>FLY001.DAT</td>
                                     <td>Drone Flight Log DJI</td>
                                     <td><span class="table-status table-status-green">TERPARSING</span></td>
                                 </tr>
                                 <tr>
-                                    <td>2026-06-11 21:14</td>
+                                    <td><span style="font-family: var(--font-mono); font-size:0.8rem;">2026-06-11 21:14</span></td>
                                     <td>IMG_882.JPG</td>
                                     <td>Citra Stego LSB</td>
                                     <td><span class="table-status table-status-orange">TERANALISIS</span></td>
                                 </tr>
                                 <tr>
-                                    <td>2026-06-11 19:45</td>
+                                    <td><span style="font-family: var(--font-mono); font-size:0.8rem;">2026-06-11 19:45</span></td>
                                     <td>Manifest.db</td>
                                     <td>Data Plist iOS</td>
                                     <td><span class="table-status table-status-green">TERDEKRIPSI</span></td>
                                 </tr>
                                 <tr>
-                                    <td>2026-06-11 18:30</td>
+                                    <td><span style="font-family: var(--font-mono); font-size:0.8rem;">2026-06-11 18:30</span></td>
                                     <td>System.log</td>
                                     <td>Sistem Log Jaringan</td>
-                                    <td><span class="table-status table-status-green">TERPARSING</span></td>
+                                    <td><span class="table-status table-status-green">TEREKSTRAK</span></td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
 
-            </div> 
-        </div> 
+                <div class="enterprise-card">
+                    <div class="card-header">TERMINAL AKTIVITAS</div>
+                    <div class="card-body">
+                        <ul class="activity-list">
+                            <li class="activity-item">
+                                <span class="activity-time text-cyber">22:14:05 // iLEAPP</span>
+                                <span class="activity-text">Modul parser berhasil mengekstrak 120 koordinat GPS dari FLY001.DAT.</span>
+                            </li>
+                            <li class="activity-item">
+                                <span class="activity-time" style="color: var(--accent-orange);">19:45:12 // STEGO</span>
+                                <span class="activity-text">Perbedaan piksel terdeteksi pada indeks LSB IMG_882.JPG.</span>
+                            </li>
+                            <li class="activity-item">
+                                <span class="activity-time text-cyber">15:30:22 // SYSTEM</span>
+                                <span class="activity-text">Validasi Hamming Distance selesai. Akurasi komparasi 100%.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
 
-        <footer style="padding: 20px 30px; text-align: center; color: var(--text-secondary); font-size: 0.8rem;">
+            </div> </div> <footer style="padding: 20px 30px; text-align: center; color: var(--text-secondary); font-size: 0.8rem; border-top: 1px solid var(--border-color);">
             Copyright © 2026 Novi Adintya Putra. Cyber Security Operations Center.
         </footer>
     </main>
