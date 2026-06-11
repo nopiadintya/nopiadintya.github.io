@@ -8,6 +8,76 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        .carousel-wrapper {
+            position: relative;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+        .carousel-container {
+            overflow: hidden;
+            width: 100%;
+            border-radius: 8px;
+        }
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        .carousel-slide {
+            min-width: 100%;
+            box-sizing: border-box;
+            padding: 0 5px; /* Sedikit jarak agar bayangan tidak terpotong */
+        }
+        
+        /* Tombol Navigasi Kiri-Kanan */
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(2, 12, 27, 0.85);
+            color: var(--accent);
+            border: 1px solid var(--accent);
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            transition: var(--transition);
+        }
+        .carousel-btn:hover {
+            background-color: var(--accent);
+            color: var(--bg-main);
+        }
+        .carousel-btn.prev { left: -22px; }
+        .carousel-btn.next { right: -22px; }
+
+        /* Titik Indikator Bawah */
+        .carousel-dots {
+            text-align: center;
+            margin-top: 25px;
+        }
+        .dot {
+            cursor: pointer;
+            height: 10px;
+            width: 10px;
+            margin: 0 6px;
+            background-color: #233554;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+        .dot.active, .dot:hover { background-color: var(--accent); }
+
+        @media (max-width: 768px) {
+            .carousel-btn.prev { left: -10px; width: 35px; height: 35px; font-size: 1rem; }
+            .carousel-btn.next { right: -10px; width: 35px; height: 35px; font-size: 1rem; }
+        }
+    </style>
 </head>
 <body>
 
@@ -59,35 +129,53 @@
                 </div>
             </div>
 
-            <div class="project-grid">
+            <div class="carousel-wrapper">
+                <button class="carousel-btn prev" onclick="moveSlide(-1)">&#10094;</button>
                 
-                <div class="project-card" style="border-top: 3px solid var(--accent); padding: 25px;">
-                    <div style="margin-bottom: 20px; border-radius: 4px; overflow: hidden; border: 1px solid #233554;">
-                        <img src="thumb-forensic.png" alt="Thumbnail Forensic Dashboard" style="width: 100%; height: auto; display: block; aspect-ratio: 16/9; object-fit: cover; object-position: top;">
-                    </div>
-                    <div class="project-body" style="padding: 0;">
-                        <h3 style="color: var(--text-primary); margin-top: 0;">Forensic Analytics Control Panel</h3>
-                        <p>Simulasi antarmuka <i>Cyber Security Operations Center</i> (CSOC) untuk memantau performa parser iLEAPP, integritas data artefak, dan log aktivitas secara real-time.</p>
-                        <div style="margin-top: 25px;">
-                            <a href="dashboard.html" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.85rem;">Buka Dashboard SOC →</a>
+                <div class="carousel-container">
+                    <div class="carousel-track" id="portfolio-track">
+                        
+                        <div class="carousel-slide">
+                            <div class="project-card" style="border-top: 3px solid var(--accent); padding: 25px; margin: 0;">
+                                <div style="margin-bottom: 20px; border-radius: 4px; overflow: hidden; border: 1px solid #233554;">
+                                    <img src="thumb-forensic.png" alt="Thumbnail Forensic Dashboard" style="width: 100%; height: auto; display: block; aspect-ratio: 16/9; object-fit: cover; object-position: top;">
+                                </div>
+                                <div class="project-body" style="padding: 0;">
+                                    <h3 style="color: var(--text-primary); margin-top: 0;">Forensic Analytics Control Panel</h3>
+                                    <p>Simulasi antarmuka <i>Cyber Security Operations Center</i> (CSOC) untuk memantau performa parser iLEAPP, integritas data artefak, dan log aktivitas secara real-time.</p>
+                                    <div style="margin-top: 25px;">
+                                        <a href="dashboard.html" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.85rem;">Buka Dashboard SOC →</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+
+                        <div class="carousel-slide">
+                            <div class="project-card" style="border-top: 3px solid #ffbd2e; padding: 25px; margin: 0;">
+                                <div style="margin-bottom: 20px; border-radius: 4px; overflow: hidden; border: 1px solid #233554;">
+                                    <img src="thumb-minuman.png" alt="Thumbnail Dashboard Minuman" style="width: 100%; height: auto; display: block; aspect-ratio: 16/9; object-fit: cover; object-position: top;">
+                                </div>
+                                <div class="project-body" style="padding: 0;">
+                                    <h3 style="color: var(--text-primary); margin-top: 0;">Dashboard Profil Bisnis Minuman</h3>
+                                    <p>Pengembangan sistem profil komersial yang terintegrasi dengan analitik penjualan, pelacakan manajemen stok (SKU), dan visualisasi performa produk e-commerce.</p>
+                                    <div style="margin-top: 25px;">
+                                        <a href="dashboard-minuman.html" class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.85rem; border-color: #ffbd2e; color: #ffbd2e; margin-left: 0;">Buka Dashboard Bisnis →</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
-
-                <div class="project-card" style="border-top: 3px solid #ffbd2e; padding: 25px;">
-                    <div style="margin-bottom: 20px; border-radius: 4px; overflow: hidden; border: 1px solid #233554;">
-                        <img src="thumb-minuman.png" alt="Thumbnail Dashboard Minuman" style="width: 100%; height: auto; display: block; aspect-ratio: 16/9; object-fit: cover; object-position: top;">
-                    </div>
-                    <div class="project-body" style="padding: 0;">
-                        <h3 style="color: var(--text-primary); margin-top: 0;">Dashboard Profil Bisnis Minuman</h3>
-                        <p>Pengembangan sistem profil komersial yang terintegrasi dengan analitik penjualan, pelacakan manajemen stok (SKU), dan visualisasi performa produk e-commerce.</p>
-                        <div style="margin-top: 25px;">
-                            <a href="dashboard-minuman.html" class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.85rem; border-color: #ffbd2e; color: #ffbd2e; margin-left: 0;">Buka Dashboard Bisnis →</a>
-                        </div>
-                    </div>
-                </div>
-
+                
+                <button class="carousel-btn next" onclick="moveSlide(1)">&#10095;</button>
             </div>
+
+            <div class="carousel-dots">
+                <span class="dot active" onclick="currentSlide(0)"></span>
+                <span class="dot" onclick="currentSlide(1)"></span>
+            </div>
+
         </div> 
     </section>
 
@@ -209,6 +297,7 @@
     </footer>
 
     <script>
+        // --- Logika Hamburger Menu Mobile ---
         const mobileMenu = document.getElementById('mobile-menu');
         const navLinks = document.querySelector('.nav-links');
 
@@ -223,6 +312,33 @@
                 navLinks.classList.remove('active');
             });
         });
+
+        // --- Logika Carousel Portofolio ---
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.carousel-slide');
+        const dots = document.querySelectorAll('.dot');
+        const track = document.getElementById('portfolio-track');
+
+        function moveSlide(n) {
+            slideIndex += n;
+            if (slideIndex >= slides.length) { slideIndex = 0; }
+            if (slideIndex < 0) { slideIndex = slides.length - 1; }
+            updateCarousel();
+        }
+
+        function currentSlide(n) {
+            slideIndex = n;
+            updateCarousel();
+        }
+
+        function updateCarousel() {
+            // Menggeser jalur X sebesar 100% per slide
+            track.style.transform = `translateX(-${slideIndex * 100}%)`;
+            
+            // Memperbarui indikator titik aktif
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[slideIndex].classList.add('active');
+        }
     </script>
 </body>
 </html>
