@@ -84,10 +84,10 @@
 
                 <!-- Desktop Menu -->
                 <div class="hidden lg:flex items-center space-x-8 font-semibold text-gray-600 dark:text-gray-300">
-                    <a href="#" class="hover:text-brand-500 transition-colors">Cerita</a>
-                    <a href="#" class="hover:text-brand-500 transition-colors">Keunggulan</a>
-                    <a href="#" class="hover:text-brand-500 transition-colors">Testimoni</a>
-                    <a href="#" class="hover:text-brand-500 transition-colors">FAQ</a>
+                    <a href="#cerita" class="hover:text-brand-500 transition-colors">Cerita</a>
+                    <a href="#keunggulan" class="hover:text-brand-500 transition-colors">Keunggulan</a>
+                    <a href="#testimoni" class="hover:text-brand-500 transition-colors">Testimoni</a>
+                    <a href="#faq" class="hover:text-brand-500 transition-colors">FAQ</a>
                 </div>
 
                 <!-- Right Actions (Desktop & Mobile) -->
@@ -114,10 +114,10 @@
         <!-- Mobile Menu (Hidden by default) -->
         <div id="mobileMenu" class="hidden lg:hidden border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 absolute w-full shadow-lg">
             <div class="px-4 pt-4 pb-6 space-y-4">
-                <a href="#" class="block px-3 py-2 rounded-md text-base font-semibold text-gray-700 dark:text-gray-200 hover:text-brand-500 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">Cerita</a>
-                <a href="#" class="block px-3 py-2 rounded-md text-base font-semibold text-gray-700 dark:text-gray-200 hover:text-brand-500 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">Keunggulan</a>
-                <a href="#" class="block px-3 py-2 rounded-md text-base font-semibold text-gray-700 dark:text-gray-200 hover:text-brand-500 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">Testimoni</a>
-                <a href="#" class="block px-3 py-2 rounded-md text-base font-semibold text-gray-700 dark:text-gray-200 hover:text-brand-500 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">FAQ</a>
+                <a href="#cerita" class="block px-3 py-2 rounded-md text-base font-semibold text-gray-700 dark:text-gray-200 hover:text-brand-500 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">Cerita</a>
+                <a href="#keunggulan" class="block px-3 py-2 rounded-md text-base font-semibold text-gray-700 dark:text-gray-200 hover:text-brand-500 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">Keunggulan</a>
+                <a href="#testimoni" class="block px-3 py-2 rounded-md text-base font-semibold text-gray-700 dark:text-gray-200 hover:text-brand-500 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">Testimoni</a>
+                <a href="#faq" class="block px-3 py-2 rounded-md text-base font-semibold text-gray-700 dark:text-gray-200 hover:text-brand-500 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">FAQ</a>
                 <div class="pt-4 border-t border-gray-200 dark:border-gray-800 sm:hidden">
                      <a href="#" class="w-full flex items-center justify-center px-6 py-3 bg-brand-500 hover:bg-brand-600 text-white font-bold rounded-full transition-colors shadow-md">
                         Beli Sekarang
@@ -175,10 +175,10 @@
                             Beli Sekarang
                             <i class="ph-bold ph-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
                         </button>
-                        <button class="w-full sm:w-auto flex items-center justify-center px-8 py-4 bg-transparent border-2 border-brand-200 dark:border-gray-700 hover:border-brand-500 dark:hover:border-brand-500 text-brand-600 dark:text-brand-400 font-bold rounded-full transition-colors text-lg group">
+                        <a href="#cerita" class="w-full sm:w-auto flex items-center justify-center px-8 py-4 bg-transparent border-2 border-brand-200 dark:border-gray-700 hover:border-brand-500 dark:hover:border-brand-500 text-brand-600 dark:text-brand-400 font-bold rounded-full transition-colors text-lg group">
                             Baca ceritanya dulu
                             <i class="ph-bold ph-arrow-down ml-2 group-hover:translate-y-1 transition-transform text-sm"></i>
-                        </button>
+                        </a>
                     </div>
 
                     <!-- Trust Note -->
@@ -231,6 +231,102 @@
 
             </div>
         </div>
+
+        <!-- Section 2: Cerita -->
+        <section id="cerita" class="relative bg-[#FDF6E9] dark:bg-gray-800 pt-20 pb-24 mt-16 sm:mt-24 border-t-0">
+            
+            <!-- Wavy top divider / Scallop effect -->
+            <div class="absolute top-0 left-0 w-full overflow-hidden leading-none -translate-y-full">
+                <svg class="block w-full h-[14px] sm:h-[18px] text-[#FDF6E9] dark:text-gray-800" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+                    <defs>
+                        <pattern id="scallop" x="0" y="0" width="36" height="18" patternUnits="userSpaceOnUse">
+                            <path d="M0,18 Q18,0 36,18 Z" fill="currentColor" />
+                        </pattern>
+                    </defs>
+                    <rect x="0" y="0" width="100%" height="100%" fill="url(#scallop)" />
+                </svg>
+            </div>
+
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <!-- Pre-heading -->
+                <div class="flex items-center text-brand-700 dark:text-brand-400 font-bold uppercase tracking-widest text-xs sm:text-sm mb-6">
+                    <i class="ph-bold ph-drop mr-2 text-lg"></i>
+                    Sebelum Anda Beli Madu Mana Pun
+                </div>
+
+                <!-- Heading -->
+                <h2 class="font-serif text-[2.5rem] sm:text-5xl lg:text-6xl font-black text-gray-900 dark:text-white leading-[1.1] mb-6 tracking-tight">
+                    Tiga keluhan paling sering soal madu — dan kenapa itu wajar.
+                </h2>
+
+                <!-- Sub-heading -->
+                <p class="text-lg sm:text-xl text-gray-700 dark:text-gray-300 mb-12 sm:mb-16 max-w-3xl">
+                    Kalau Anda pernah kecewa setelah beli madu, kemungkinan besar penyebabnya salah satu dari ini:
+                </p>
+
+                <!-- List Items Container -->
+                <div class="space-y-0">
+                    
+                    <!-- Item 1 -->
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-8 border-t-2 border-[#F0E4D0] dark:border-gray-700 py-10 sm:py-12">
+                        <div class="col-span-1 md:col-span-5 flex flex-row md:flex-col items-start gap-5 md:gap-0">
+                            <span class="font-serif text-6xl sm:text-7xl lg:text-8xl font-black text-brand-300 dark:text-brand-500 leading-none">01</span>
+                            <h3 class="font-serif text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white md:mt-4 leading-tight self-center md:self-auto">
+                                Harga mahal,<br class="hidden md:block"/>isi tidak sepadan.
+                            </h3>
+                        </div>
+                        <div class="col-span-1 md:col-span-7 md:pt-4">
+                            <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-lg sm:text-xl">
+                                Madu bisa dijual mahal karena kemasan cantik dan cerita pemasaran yang dibesar-besarkan — bukan karena asal-usulnya. Anda membayar "panggung"-nya, bukan isinya.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-8 border-t-2 border-[#F0E4D0] dark:border-gray-700 py-10 sm:py-12">
+                        <div class="col-span-1 md:col-span-5 flex flex-row md:flex-col items-start gap-5 md:gap-0">
+                            <span class="font-serif text-6xl sm:text-7xl lg:text-8xl font-black text-brand-300 dark:text-brand-500 leading-none">02</span>
+                            <h3 class="font-serif text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white md:mt-4 leading-tight self-center md:self-auto">
+                                Sulit tahu<br class="hidden md:block"/>mana yang asli.
+                            </h3>
+                        </div>
+                        <div class="col-span-1 md:col-span-7 md:pt-4">
+                            <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-lg sm:text-xl">
+                                Label "madu asli" bisa dicetak siapa saja. Padahal madu hutan asli punya ciri yang justru "tidak sempurna": warna dan rasanya berubah dari musim ke musim, mengikuti bunga yang sedang dominan nektarnya.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-8 border-t-2 border-b-2 border-[#F0E4D0] dark:border-gray-700 py-10 sm:py-12">
+                        <div class="col-span-1 md:col-span-5 flex flex-row md:flex-col items-start gap-5 md:gap-0">
+                            <span class="font-serif text-6xl sm:text-7xl lg:text-8xl font-black text-brand-300 dark:text-brand-500 leading-none">03</span>
+                            <h3 class="font-serif text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white md:mt-4 leading-tight self-center md:self-auto">
+                                Sampai rumah,<br class="hidden md:block"/>botolnya yang<br class="hidden md:block"/>menyerah duluan.
+                            </h3>
+                        </div>
+                        <div class="col-span-1 md:col-span-7 md:pt-4">
+                            <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-lg sm:text-xl">
+                                Packing asal balut masih sering terjadi. Akibatnya botol pecah atau bocor di perjalanan — dan komplainnya jadi merepotkan dua pihak.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Footer Text -->
+                <div class="mt-12 sm:mt-16">
+                    <p class="text-gray-900 dark:text-white text-base sm:text-lg font-medium leading-relaxed">
+                        Ketiganya yang kami coba jawab dengan cara kerja Madu Arowana — satu per satu, Anda akan lihat di bawah. 
+                        <a href="#solusi" class="text-brand-700 dark:text-brand-400 hover:text-brand-800 dark:hover:text-brand-300 font-bold transition-colors inline-flex items-center ml-1">
+                            Lihat caranya <i class="ph-bold ph-arrow-down ml-1 text-sm mt-0.5"></i>
+                        </a>
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
     </main>
 
     <script>
