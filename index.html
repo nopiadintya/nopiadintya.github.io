@@ -63,9 +63,18 @@
         .animate-float-delayed {
             animation: float 4.5s ease-in-out infinite 2s;
         }
+
+        /* Number styling for "Cara Menikmati" */
+        .giant-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            line-height: 1;
+            font-weight: 900;
+            color: #fbbf24;
+        }
     </style>
 </head>
-<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300 antialiased font-sans">
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300 antialiased font-sans overflow-x-hidden">
 
     <nav class="sticky top-0 z-50 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -99,7 +108,7 @@
                     </button>
                     
                     <!-- CTA Button (Desktop) -->
-                    <a href="#" class="hidden sm:inline-flex items-center justify-center px-6 py-2.5 bg-brand-500 hover:bg-brand-600 text-white font-bold rounded-full transition-transform transform hover:scale-105 active:scale-95 shadow-md shadow-brand-500/30">
+                    <a href="#beli" class="hidden sm:inline-flex items-center justify-center px-6 py-2.5 bg-brand-500 hover:bg-brand-600 text-white font-bold rounded-full transition-transform transform hover:scale-105 active:scale-95 shadow-md shadow-brand-500/30">
                         Beli Sekarang
                     </a>
 
@@ -114,12 +123,12 @@
         <!-- Mobile Menu (Hidden by default) -->
         <div id="mobileMenu" class="hidden lg:hidden border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 absolute w-full shadow-lg">
             <div class="px-4 pt-4 pb-6 space-y-4">
-                <a href="#cerita" class="block px-3 py-2 rounded-md text-base font-semibold text-gray-700 dark:text-gray-200 hover:text-brand-500 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">Cerita</a>
-                <a href="#keunggulan" class="block px-3 py-2 rounded-md text-base font-semibold text-gray-700 dark:text-gray-200 hover:text-brand-500 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">Keunggulan</a>
-                <a href="#testimoni" class="block px-3 py-2 rounded-md text-base font-semibold text-gray-700 dark:text-gray-200 hover:text-brand-500 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">Testimoni</a>
-                <a href="#faq" class="block px-3 py-2 rounded-md text-base font-semibold text-gray-700 dark:text-gray-200 hover:text-brand-500 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">FAQ</a>
+                <a href="#cerita" class="block px-3 py-2 rounded-md text-base font-semibold text-gray-700 dark:text-gray-200 hover:text-brand-500 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors mobile-link">Cerita</a>
+                <a href="#keunggulan" class="block px-3 py-2 rounded-md text-base font-semibold text-gray-700 dark:text-gray-200 hover:text-brand-500 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors mobile-link">Keunggulan</a>
+                <a href="#testimoni" class="block px-3 py-2 rounded-md text-base font-semibold text-gray-700 dark:text-gray-200 hover:text-brand-500 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors mobile-link">Testimoni</a>
+                <a href="#faq" class="block px-3 py-2 rounded-md text-base font-semibold text-gray-700 dark:text-gray-200 hover:text-brand-500 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors mobile-link">FAQ</a>
                 <div class="pt-4 border-t border-gray-200 dark:border-gray-800 sm:hidden">
-                     <a href="#" class="w-full flex items-center justify-center px-6 py-3 bg-brand-500 hover:bg-brand-600 text-white font-bold rounded-full transition-colors shadow-md">
+                     <a href="#beli" class="w-full flex items-center justify-center px-6 py-3 bg-brand-500 hover:bg-brand-600 text-white font-bold rounded-full transition-colors shadow-md mobile-link">
                         Beli Sekarang
                     </a>
                 </div>
@@ -127,7 +136,7 @@
         </div>
     </nav>
 
-    <main class="relative overflow-hidden">
+    <main class="relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-20 lg:pt-20 lg:pb-32">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-8 items-center">
                 
@@ -171,10 +180,10 @@
 
                     <!-- CTA Buttons -->
                     <div class="flex flex-col sm:flex-row items-center gap-4 mb-6">
-                        <button class="w-full sm:w-auto flex items-center justify-center px-8 py-4 bg-brand-500 hover:bg-brand-600 text-white font-bold rounded-full transition-transform transform hover:scale-105 active:scale-95 shadow-lg shadow-brand-500/40 text-lg group">
+                        <a href="#beli" class="w-full sm:w-auto flex items-center justify-center px-8 py-4 bg-brand-500 hover:bg-brand-600 text-white font-bold rounded-full transition-transform transform hover:scale-105 active:scale-95 shadow-lg shadow-brand-500/40 text-lg group">
                             Beli Sekarang
                             <i class="ph-bold ph-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
-                        </button>
+                        </a>
                         <a href="#cerita" class="w-full sm:w-auto flex items-center justify-center px-8 py-4 bg-transparent border-2 border-brand-200 dark:border-gray-700 hover:border-brand-500 dark:hover:border-brand-500 text-brand-600 dark:text-brand-400 font-bold rounded-full transition-colors text-lg group">
                             Baca ceritanya dulu
                             <i class="ph-bold ph-arrow-down ml-2 group-hover:translate-y-1 transition-transform text-sm"></i>
@@ -233,7 +242,7 @@
         </div>
 
         <!-- Section 2: Cerita -->
-        <section id="cerita" class="relative bg-[#FDF6E9] dark:bg-gray-800 pt-20 pb-24 mt-16 sm:mt-24 border-t-0">
+        <section id="cerita" class="relative bg-[#FDF6E9] dark:bg-gray-800 pt-20 pb-24 border-t-0">
             
             <!-- Wavy top divider / Scallop effect -->
             <div class="absolute top-0 left-0 w-full overflow-hidden leading-none -translate-y-full">
@@ -318,7 +327,7 @@
                 <div class="mt-12 sm:mt-16">
                     <p class="text-gray-900 dark:text-white text-base sm:text-lg font-medium leading-relaxed">
                         Ketiganya yang kami coba jawab dengan cara kerja Madu Arowana — satu per satu, Anda akan lihat di bawah. 
-                        <a href="#solusi" class="text-brand-700 dark:text-brand-400 hover:text-brand-800 dark:hover:text-brand-300 font-bold transition-colors inline-flex items-center ml-1">
+                        <a href="#keunggulan" class="text-brand-700 dark:text-brand-400 hover:text-brand-800 dark:hover:text-brand-300 font-bold transition-colors inline-flex items-center ml-1">
                             Lihat caranya <i class="ph-bold ph-arrow-down ml-1 text-sm mt-0.5"></i>
                         </a>
                     </p>
@@ -327,7 +336,7 @@
             </div>
         </section>
 
-        <!-- Section 3: Asal Usul (Where it comes from) -->
+        <!-- Section 3: Asal Usul -->
         <section id="asal-usul" class="relative bg-white dark:bg-gray-900 py-20 sm:py-28 transition-colors duration-300 border-t border-gray-100 dark:border-gray-800">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 
@@ -363,7 +372,7 @@
                         </div>
                     </div>
                     <div class="order-1 md:order-2 flex justify-center md:justify-end">
-                        <!-- Image Placeholder -->
+                        <!-- Placeholder -->
                         <div class="w-full max-w-[320px] aspect-square bg-brand-100 dark:bg-stone-800 rounded-[2rem] flex items-center justify-center p-8 text-center shadow-inner border border-brand-200/50 dark:border-stone-700">
                             <span class="text-brand-800 dark:text-brand-400/80 font-bold text-sm sm:text-base">Sarang Lebah Hutan + Sistem Tikung</span>
                         </div>
@@ -373,7 +382,7 @@
                 <!-- Block 2: Nektar (Image Left, Text Right on Desktop) -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
                     <div class="flex justify-center md:justify-start">
-                        <!-- Image Placeholder -->
+                        <!-- Placeholder -->
                         <div class="w-full max-w-[320px] aspect-square bg-[#eaddcf] dark:bg-stone-800 rounded-[2rem] flex items-center justify-center p-8 text-center shadow-inner border border-[#d6c7b6] dark:border-stone-700">
                             <span class="text-stone-700 dark:text-stone-400 font-bold text-sm sm:text-base">Bunga Hutan Rawa Danau Sentarum</span>
                         </div>
@@ -404,7 +413,6 @@
                                 <div><span class="font-semibold block text-gray-800 dark:text-gray-200">Musim emasung</span> cenderung bening</div>
                             </div>
 
-                            <!-- Footer note -->
                             <p class="mt-6 text-gray-700 dark:text-gray-300 leading-relaxed">
                                 Justru karena berubah-ubah inilah Anda bisa lebih yakin nektarnya berasal dari bunga sungguhan — bukan dari teko gula.
                             </p>
@@ -412,6 +420,277 @@
                     </div>
                 </div>
 
+            </div>
+        </section>
+
+        <!-- Section 4: Keunggulan -->
+        <section id="keunggulan" class="relative bg-white dark:bg-gray-900 py-16 sm:py-24 border-t border-gray-100 dark:border-gray-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                    
+                    <!-- Left Column (Sticky on large screens) -->
+                    <div class="lg:col-span-5 lg:sticky lg:top-32">
+                        <div class="flex items-center text-brand-600 dark:text-brand-500 font-bold uppercase tracking-widest text-xs sm:text-sm mb-4">
+                            <i class="ph-bold ph-asterisk mr-2 text-lg"></i>
+                            APA ISI SEBOTOL INI UNTUK ANDA?
+                        </div>
+                        <h2 class="font-serif text-[2.25rem] sm:text-4xl lg:text-5xl font-black text-gray-900 dark:text-white leading-[1.1] mb-6 tracking-tight">
+                            Sumber energi alami dengan karakter yang tidak mudah dilupakan.
+                        </h2>
+                        <p class="text-gray-600 dark:text-gray-300 text-lg leading-relaxed mb-8">
+                            Kami sengaja tidak melebih-lebihkan apa pun. Madu bukan obat — dan tidak perlu jadi obat untuk layak menempati rak dapur Anda. Yang kami tawarkan sederhana: madu hutan asli, dengan rasa dan ceritanya.
+                        </p>
+                        <a href="#beli" class="inline-flex items-center justify-center px-8 py-3.5 bg-brand-500 hover:bg-brand-600 text-white font-bold rounded-full transition-transform transform hover:scale-105 active:scale-95 shadow-lg shadow-brand-500/30 text-lg group w-full sm:w-auto">
+                            Beli Sekarang
+                            <i class="ph-bold ph-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+
+                    <!-- Right Column (Cards) -->
+                    <div class="lg:col-span-7 flex flex-col gap-8 lg:gap-10 lg:pl-10">
+                        
+                        <!-- Card 1 -->
+                        <div class="flex items-start gap-4 sm:gap-6 pb-8 border-b border-gray-100 dark:border-gray-800 last:border-0 last:pb-0">
+                            <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-brand-100 dark:bg-brand-900/40 text-brand-600 dark:text-brand-400 flex items-center justify-center shrink-0">
+                                <i class="ph ph-sun text-2xl sm:text-3xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Sumber energi alami</h3>
+                                <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-base sm:text-lg">
+                                    Madu mengandung karbohidrat sederhana — sumber energi cepat yang nyaman untuk memulai hari atau mengisi jeda di sela aktivitas.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="flex items-start gap-4 sm:gap-6 pb-8 border-b border-gray-100 dark:border-gray-800 last:border-0 last:pb-0">
+                            <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-brand-100 dark:bg-brand-900/40 text-brand-600 dark:text-brand-400 flex items-center justify-center shrink-0">
+                                <i class="ph ph-drop text-2xl sm:text-3xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Pemanis alami yang berkarakter</h3>
+                                <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-base sm:text-lg">
+                                    Untuk teh, kopi hitam, oatmeal, atau roti panggang. Manisnya berlapis dan aromanya wangi — bukan manis rata seperti gula cair.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="flex items-start gap-4 sm:gap-6 pb-8 border-b border-gray-100 dark:border-gray-800 last:border-0 last:pb-0">
+                            <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-brand-100 dark:bg-brand-900/40 text-brand-600 dark:text-brand-400 flex items-center justify-center shrink-0">
+                                <i class="ph ph-circles-four text-2xl sm:text-3xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Karakter rasa & aroma khas hutan rawa</h3>
+                                <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-base sm:text-lg">
+                                    Setiap panen punya “wajah”-nya sendiri mengikuti bunga yang sedang dominan. Sekali mengenal, Anda mudah membedakannya dari madu generik.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Card 4 -->
+                        <div class="flex items-start gap-4 sm:gap-6 pb-8 border-b border-gray-100 dark:border-gray-800 last:border-0 last:pb-0">
+                            <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-brand-100 dark:bg-brand-900/40 text-brand-600 dark:text-brand-400 flex items-center justify-center shrink-0">
+                                <i class="ph ph-heart text-2xl sm:text-3xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Berpihak pada petani dan hutan</h3>
+                                <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-base sm:text-lg">
+                                    Madu adalah hasil hutan non-kayu: setiap botol yang terjual memberi pendapatan langsung bagi masyarakat yang menjaga kawasan tetap sehat.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Card 5 -->
+                        <div class="flex items-start gap-4 sm:gap-6 pb-8 border-b border-gray-100 dark:border-gray-800 last:border-0 last:pb-0">
+                            <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-brand-100 dark:bg-brand-900/40 text-brand-600 dark:text-brand-400 flex items-center justify-center shrink-0">
+                                <i class="ph ph-package text-2xl sm:text-3xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Sampai di tangan Anda dalam kondisi utuh</h3>
+                                <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-base sm:text-lg">
+                                    Botol ditutup segel, dibungkus bubble wrap berlapis, dan didukung komitmen pengiriman ulang bila terjadi masalah di perjalanan.
+                                </p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Cara Menikmati -->
+        <section class="relative bg-white dark:bg-gray-900 pb-20 sm:pb-28">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="bg-brand-50 dark:bg-brand-900/20 border border-brand-100 dark:border-brand-800 rounded-3xl p-8 sm:p-12 lg:p-16">
+                    
+                    <div class="text-brand-600 dark:text-brand-500 font-bold uppercase tracking-widest text-sm mb-8 sm:mb-12">
+                        TIGA CARA PALING NYAMAN MENIKMATINYA
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-0">
+                        
+                        <!-- Col 1 -->
+                        <div class="flex flex-row md:flex-col lg:flex-row items-start gap-4 md:border-r border-brand-200 dark:border-brand-800/50 md:pr-8">
+                            <span class="giant-number shrink-0">1</span>
+                            <p class="text-gray-700 dark:text-gray-300 text-lg leading-relaxed pt-1">
+                                Sendokan langsung. Satu-dua sendok di pagi hari sebagai pembuka energi.
+                            </p>
+                        </div>
+                        
+                        <!-- Col 2 -->
+                        <div class="flex flex-row md:flex-col lg:flex-row items-start gap-4 md:border-r border-brand-200 dark:border-brand-800/50 md:px-8">
+                            <span class="giant-number shrink-0">2</span>
+                            <p class="text-gray-700 dark:text-gray-300 text-lg leading-relaxed pt-1">
+                                Dilarutkan ke minuman hangat — suam-suam kopi atau teh, jangan mendidih.
+                            </p>
+                        </div>
+
+                        <!-- Col 3 -->
+                        <div class="flex flex-row md:flex-col lg:flex-row items-start gap-4 md:pl-8">
+                            <span class="giant-number shrink-0">3</span>
+                            <p class="text-gray-700 dark:text-gray-300 text-lg leading-relaxed pt-1">
+                                Sebagai topping roti panggang, yogurt, atau oatmeal. Manisnya berkarakter.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Section 6: Perbandingan -->
+        <section class="relative bg-white dark:bg-gray-900 py-20 border-t border-gray-100 dark:border-gray-800">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                
+                <div class="flex items-center justify-center text-brand-700 dark:text-brand-500 font-bold uppercase tracking-widest text-sm mb-6">
+                    <i class="ph-bold ph-scales mr-2 text-lg"></i>
+                    BANDINGKAN DULU, BARU PUTUSKAN
+                </div>
+                
+                <h2 class="font-serif text-3xl sm:text-5xl font-black text-gray-900 dark:text-white leading-[1.1] mb-6">
+                    Madu Arowana vs. madu “biasa” yang beredar.
+                </h2>
+                <p class="text-gray-600 dark:text-gray-300 text-lg sm:text-xl leading-relaxed mb-12 max-w-2xl mx-auto">
+                    Kami tidak bilang yang lain buruk. Kami cuma ingin Anda tahu bedanya, supaya keputusan Anda mantap.
+                </p>
+
+                <!-- Responsive Table Wrapper -->
+                <div class="overflow-x-auto w-full rounded-2xl border border-gray-200 dark:border-gray-700 shadow-sm mb-8">
+                    <table class="w-full text-left min-w-[700px] border-collapse bg-white dark:bg-gray-800">
+                        <thead>
+                            <tr class="border-b border-gray-200 dark:border-gray-700">
+                                <th class="w-[25%] p-6 text-gray-500 dark:text-gray-400 font-bold text-sm bg-gray-50 dark:bg-gray-900/50">Yang dibandingkan</th>
+                                <th class="w-[45%] p-6 bg-brand-50/50 dark:bg-brand-900/20 border-x border-brand-100 dark:border-gray-700 relative">
+                                    <span class="block text-xl font-bold text-gray-900 dark:text-white">Madu Arowana</span>
+                                    <span class="inline-block mt-2 bg-brand-500 text-white text-[10px] sm:text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full">Pilihan Kami</span>
+                                </th>
+                                <th class="w-[30%] p-6 text-gray-500 dark:text-gray-400 font-bold text-base bg-gray-50 dark:bg-gray-900/50">Madu generik</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-base sm:text-lg">
+                            <tr class="border-b border-gray-200 dark:border-gray-700">
+                                <td class="p-6 font-semibold text-gray-700 dark:text-gray-300">Asal nektar</td>
+                                <td class="p-6 bg-brand-50/50 dark:bg-brand-900/20 border-x border-brand-100 dark:border-gray-700 font-medium text-gray-900 dark:text-white flex items-start gap-3">
+                                    <i class="ph-bold ph-check text-brand-500 mt-1 shrink-0"></i>
+                                    ±20 jenis tumbuhan hutan rawa Danau Sentarum
+                                </td>
+                                <td class="p-6 text-gray-500 dark:text-gray-400 flex items-start gap-3">
+                                    <i class="ph-bold ph-x text-gray-300 dark:text-gray-600 mt-1 shrink-0"></i>
+                                    Sering tidak diceritakan
+                                </td>
+                            </tr>
+                            <tr class="border-b border-gray-200 dark:border-gray-700">
+                                <td class="p-6 font-semibold text-gray-700 dark:text-gray-300">Jenis lebah</td>
+                                <td class="p-6 bg-brand-50/50 dark:bg-brand-900/20 border-x border-brand-100 dark:border-gray-700 font-medium text-gray-900 dark:text-white flex items-start gap-3">
+                                    <i class="ph-bold ph-check text-brand-500 mt-1 shrink-0"></i>
+                                    Lebah hutan Apis dorsata
+                                </td>
+                                <td class="p-6 text-gray-500 dark:text-gray-400 flex items-start gap-3">
+                                    <i class="ph-bold ph-x text-gray-300 dark:text-gray-600 mt-1 shrink-0"></i>
+                                    Umumnya lebah budidaya
+                                </td>
+                            </tr>
+                            <tr class="border-b border-gray-200 dark:border-gray-700">
+                                <td class="p-6 font-semibold text-gray-700 dark:text-gray-300">Cara panen</td>
+                                <td class="p-6 bg-brand-50/50 dark:bg-brand-900/20 border-x border-brand-100 dark:border-gray-700 font-medium text-gray-900 dark:text-white flex items-start gap-3">
+                                    <i class="ph-bold ph-check text-brand-500 mt-1 shrink-0"></i>
+                                    Tradisional “tikung”, sarang anak lebah dibiarkan
+                                </td>
+                                <td class="p-6 text-gray-500 dark:text-gray-400 flex items-start gap-3">
+                                    <i class="ph-bold ph-x text-gray-300 dark:text-gray-600 mt-1 shrink-0"></i>
+                                    Bervariasi, jarang terdokumentasi
+                                </td>
+                            </tr>
+                            <tr class="border-b border-gray-200 dark:border-gray-700">
+                                <td class="p-6 font-semibold text-gray-700 dark:text-gray-300">Karakter rasa</td>
+                                <td class="p-6 bg-brand-50/50 dark:bg-brand-900/20 border-x border-brand-100 dark:border-gray-700 font-medium text-gray-900 dark:text-white flex items-start gap-3">
+                                    <i class="ph-bold ph-check text-brand-500 mt-1 shrink-0"></i>
+                                    Berubah tiap musim — tanda nektar alami
+                                </td>
+                                <td class="p-6 text-gray-500 dark:text-gray-400 flex items-start gap-3">
+                                    <i class="ph-bold ph-x text-gray-300 dark:text-gray-600 mt-1 shrink-0"></i>
+                                    Cenderung seragam sepanjang tahun
+                                </td>
+                            </tr>
+                            <tr class="border-b border-gray-200 dark:border-gray-700">
+                                <td class="p-6 font-semibold text-gray-700 dark:text-gray-300">Kemasan</td>
+                                <td class="p-6 bg-brand-50/50 dark:bg-brand-900/20 border-x border-brand-100 dark:border-gray-700 font-medium text-gray-900 dark:text-white flex items-start gap-3">
+                                    <i class="ph-bold ph-check text-brand-500 mt-1 shrink-0"></i>
+                                    Segel + bubble wrap berlapis + komitmen kirim ulang
+                                </td>
+                                <td class="p-6 text-gray-500 dark:text-gray-400 flex items-start gap-3">
+                                    <i class="ph-bold ph-x text-gray-300 dark:text-gray-600 mt-1 shrink-0"></i>
+                                    Sering tanpa pengaman ekstra
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="p-6 font-semibold text-gray-700 dark:text-gray-300">Harga</td>
+                                <td class="p-6 bg-brand-50/50 dark:bg-brand-900/20 border-x border-brand-100 dark:border-gray-700 font-medium text-gray-900 dark:text-white flex items-start gap-3">
+                                    <i class="ph-bold ph-check text-brand-500 mt-1 shrink-0"></i>
+                                    Rp125.000 promo — langsung dari dekat sumbernya
+                                </td>
+                                <td class="p-6 text-gray-500 dark:text-gray-400 flex items-start gap-3">
+                                    <i class="ph-bold ph-x text-gray-300 dark:text-gray-600 mt-1 shrink-0"></i>
+                                    Bervariasi, tanpa cerita asal-usul
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p class="text-sm text-gray-400 dark:text-gray-500 mb-10">
+                    *Perbandingan bersifat umum, berdasarkan karakteristik madu hutan vs. madu olahan massal pada umumnya.
+                </p>
+
+                <a href="#beli" class="inline-flex items-center justify-center px-10 py-4 bg-brand-500 hover:bg-brand-600 text-white font-bold rounded-full transition-transform transform hover:scale-105 active:scale-95 shadow-lg shadow-brand-500/40 text-lg group">
+                    Beli Sekarang
+                    <i class="ph-bold ph-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- Section 7: Bottom CTA -->
+        <section id="beli" class="relative bg-brand-500 py-24 px-4 sm:px-6 lg:px-8 text-center">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-black text-gray-900 leading-tight mb-6">
+                    Sudah cukup yakin untuk mencicipinya?
+                </h2>
+                <p class="text-lg sm:text-xl text-gray-900/80 font-medium mb-10 max-w-xl mx-auto">
+                    Form-nya singkat — cuma butuh satu menit. Sisanya biar admin kami yang urus lewat WhatsApp.
+                </p>
+                
+                <a href="https://wa.me/1234567890" target="_blank" class="inline-flex items-center justify-center px-10 py-4 bg-gray-900 hover:bg-gray-800 text-white font-bold rounded-full transition-transform transform hover:scale-105 active:scale-95 shadow-xl text-lg group mb-6">
+                    Beli Sekarang
+                    <i class="ph-bold ph-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                </a>
+                
+                <div class="flex justify-center items-center text-sm font-medium text-gray-900/70">
+                    <i class="ph-fill ph-lock-key mr-2 text-lg"></i>
+                    <span>Tanpa pembayaran di muka · Konfirmasi dulu lewat WhatsApp</span>
+                </div>
             </div>
         </section>
 
@@ -446,12 +725,11 @@
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const mobileMenu = document.getElementById('mobileMenu');
         const menuIcon = document.getElementById('menuIcon');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
 
-        mobileMenuBtn.addEventListener('click', () => {
-            // Toggle the visibility of the mobile menu
+        function toggleMenu() {
             mobileMenu.classList.toggle('hidden');
             
-            // Toggle the icon between List (hamburger) and X (close)
             if (mobileMenu.classList.contains('hidden')) {
                 menuIcon.classList.remove('ph-x');
                 menuIcon.classList.add('ph-list');
@@ -459,6 +737,17 @@
                 menuIcon.classList.remove('ph-list');
                 menuIcon.classList.add('ph-x');
             }
+        }
+
+        mobileMenuBtn.addEventListener('click', toggleMenu);
+
+        // Close menu when clicking any mobile link
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (!mobileMenu.classList.contains('hidden')) {
+                    toggleMenu();
+                }
+            });
         });
     </script>
 </body>
