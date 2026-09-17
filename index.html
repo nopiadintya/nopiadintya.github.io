@@ -1,345 +1,229 @@
 <!DOCTYPE html>
-<html lang="id" class="dark-theme">
+<html lang="id" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio Profesional | Novi Adintya Putra, S.Kom., M.Kom.</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Madu Arowana - Madu Hutan Asli Danau Sentarum</title>
+    
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
     
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#fffbeb',
+                            100: '#fef3c7',
+                            200: '#fde68a',
+                            300: '#fcd34d',
+                            400: '#fbbf24',
+                            500: '#f59e0b', // Amber-500
+                            600: '#d97706',
+                            700: '#b45309',
+                            800: '#92400e',
+                            900: '#78350f',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
     <style>
-        .carousel-wrapper {
-            position: relative;
-            max-width: 850px;
-            margin: 0 auto;
-        }
-        .carousel-container {
-            overflow: hidden;
-            width: 100%;
-            border-radius: 8px;
-        }
-        .carousel-track {
-            display: flex;
-            transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
-        }
-        .carousel-slide {
-            min-width: 100%;
-            box-sizing: border-box;
-            padding: 0 5px; 
-            display: flex; /* Memastikan kartu merentang penuh */
-        }
-        
-        /* Tombol Navigasi Kiri-Kanan */
-        .carousel-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(2, 12, 27, 0.85);
-            color: var(--accent);
-            border: 1px solid var(--accent);
-            border-radius: 50%;
-            width: 45px;
-            height: 45px;
-            cursor: pointer;
-            font-size: 1.2rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 10;
-            transition: var(--transition);
-        }
-        .carousel-btn:hover {
-            background-color: var(--accent);
-            color: var(--bg-main);
-        }
-        .carousel-btn.prev { left: -22px; }
-        .carousel-btn.next { right: -22px; }
-
-        /* Titik Indikator Bawah */
-        .carousel-dots {
-            text-align: center;
-            margin-top: 25px;
-        }
-        .dot {
-            cursor: pointer;
-            height: 10px;
-            width: 10px;
-            margin: 0 6px;
-            background-color: #233554;
-            border-radius: 50%;
-            display: inline-block;
-            transition: background-color 0.3s ease;
-        }
-        .dot.active, .dot:hover { background-color: var(--accent); }
-
-        @media (max-width: 768px) {
-            .carousel-btn.prev { left: -10px; width: 35px; height: 35px; font-size: 1rem; }
-            .carousel-btn.next { right: -10px; width: 35px; height: 35px; font-size: 1rem; }
+        /* Custom thick underline for the headline */
+        .underline-thick {
+            text-decoration-thickness: 4px;
+            text-underline-offset: 4px;
+            text-decoration-color: #f59e0b;
         }
     </style>
 </head>
-<body>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300 antialiased font-sans">
 
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="#" class="logo">&lt;NAP/&gt;</a>
-            
-            <div class="menu-toggle" id="mobile-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+    <nav class="sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 rounded-full bg-brand-500 text-white flex items-center justify-center">
+                        <i class="ph-fill ph-drop text-2xl"></i>
+                    </div>
+                    <div class="flex flex-col leading-none">
+                        <span class="font-bold text-xl text-gray-900 dark:text-white tracking-tight">Madu</span>
+                        <span class="font-serif italic font-bold text-brand-600 dark:text-brand-400 text-lg">Arowana</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8 font-semibold text-gray-600 dark:text-gray-300">
+                    <a href="#" class="hover:text-brand-500 transition-colors">Cerita</a>
+                    <a href="#" class="hover:text-brand-500 transition-colors">Keunggulan</a>
+                    <a href="#" class="hover:text-brand-500 transition-colors">Testimoni</a>
+                    <a href="#" class="hover:text-brand-500 transition-colors">FAQ</a>
+                </div>
+
+                <!-- Right Actions -->
+                <div class="flex items-center space-x-4">
+                    <!-- Theme Toggle -->
+                    <button id="themeToggle" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-600 dark:text-gray-300 transition-colors" aria-label="Toggle Dark Mode">
+                        <i class="ph ph-moon text-xl dark:hidden block"></i>
+                        <i class="ph ph-sun text-xl hidden dark:block"></i>
+                    </button>
+                    <!-- CTA Button -->
+                    <a href="#" class="hidden sm:inline-flex items-center justify-center px-6 py-2.5 bg-brand-500 hover:bg-brand-600 text-white font-bold rounded-full transition-transform transform hover:scale-105 active:scale-95 shadow-md shadow-brand-500/30">
+                        Beli Sekarang
+                    </a>
+                </div>
             </div>
-
-            <ul class="nav-links">
-                <li><a href="#portfolio-preview">Portofolio</a></li>
-                <li><a href="#about">Tentang</a></li>
-                <li><a href="#experience">Pendidikan</a></li>
-                <li><a href="#research">Riset</a></li>
-                <li><a href="#contact">Kontak</a></li>
-            </ul>
         </div>
     </nav>
 
-    <header class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <p class="greeting">Halo, saya</p>
-                <h1>Novi Adintya Putra, S.Kom., M.Kom.</h1>
-                <p class="subtitle">Peneliti & Praktisi | <span class="accent-text">Digital Forensics & Cyber Security</span></p>
-                <p class="hero-description">
-                    Berfokus pada analisis artefak digital, pengembangan parser log penerbangan drone, steganografi, serta implementasi pemodelan matematika untuk validasi keamanan data.
-                </p>
-                <div class="hero-buttons">
-                    <a href="#portfolio-preview" class="btn btn-primary">Lihat Dashboard</a>
-                    <a href="#contact" class="btn btn-secondary">Mari Berkolaborasi</a>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <section id="portfolio-preview" class="section bg-darker">
-        <div class="container">
-            <h2 class="section-title">Portofolio Sistem & Dashboard</h2>
-            <div class="about-grid" style="margin-bottom: 40px;">
-                <div class="about-text">
-                    <p>
-                        Di luar publikasi riset, saya aktif mengembangkan antarmuka sistem (UI) dan platform dashboard analitik interaktif, baik untuk pemantauan keamanan (SOC) maupun untuk intelijen bisnis komersial.
-                    </p>
-                </div>
-            </div>
-
-            <div class="carousel-wrapper">
-                <button class="carousel-btn prev" onclick="moveSlide(-1)">&#10094;</button>
+    <main class="relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-24 lg:pt-20 lg:pb-32">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
                 
-                <div class="carousel-container">
-                    <div class="carousel-track" id="portfolio-track">
-                        
-                        <div class="carousel-slide">
-                            <div class="project-card" style="border-top: 3px solid var(--accent); padding: 25px; margin: 0; width: 100%; display: flex; flex-direction: column;">
-                                
-                                <div style="position: relative; width: 100%; padding-top: 56.25%; margin-bottom: 20px; border-radius: 4px; overflow: hidden; border: 1px solid #233554;">
-                                    <img src="thumb-forensic.png" alt="Thumbnail Forensic Dashboard" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: top;">
-                                </div>
-                                
-                                <div class="project-body" style="padding: 0; display: flex; flex-direction: column; flex-grow: 1;">
-                                    <h3 style="color: var(--text-primary); margin-top: 0;">Forensic Analytics Control Panel</h3>
-                                    <p style="flex-grow: 1;">Simulasi antarmuka <i>Cyber Security Operations Center</i> (CSOC) untuk memantau performa parser iLEAPP, integritas data artefak, dan log aktivitas secara real-time.</p>
-                                    <div style="margin-top: 25px;">
-                                        <a href="dashboard.html" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.85rem;">Buka Dashboard SOC →</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="carousel-slide">
-                            <div class="project-card" style="border-top: 3px solid #ffbd2e; padding: 25px; margin: 0; width: 100%; display: flex; flex-direction: column;">
-                                
-                                <div style="position: relative; width: 100%; padding-top: 56.25%; margin-bottom: 20px; border-radius: 4px; overflow: hidden; border: 1px solid #233554;">
-                                    <img src="thumb-minuman.png" alt="Thumbnail Dashboard Minuman" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: top;">
-                                </div>
-                                
-                                <div class="project-body" style="padding: 0; display: flex; flex-direction: column; flex-grow: 1;">
-                                    <h3 style="color: var(--text-primary); margin-top: 0;">Dashboard Profil Bisnis Minuman</h3>
-                                    <p style="flex-grow: 1;">Pengembangan sistem profil komersial yang terintegrasi dengan analitik penjualan, pelacakan manajemen stok (SKU), dan visualisasi performa produk e-commerce.</p>
-                                    <div style="margin-top: 25px;">
-                                        <a href="dashboard-minuman.html" class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.85rem; border-color: #ffbd2e; color: #ffbd2e; margin-left: 0;">Buka Dashboard Bisnis →</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
+                <!-- Left Column: Content -->
+                <div class="max-w-2xl">
+                    <!-- Badge -->
+                    <div class="inline-flex items-center border border-brand-300 bg-brand-50 dark:bg-brand-900/30 text-brand-700 dark:text-brand-400 px-4 py-2 rounded-full text-xs sm:text-sm font-bold tracking-widest uppercase mb-6">
+                        <span class="mr-2">•</span>
+                        Madu Hutan · Danau Sentarum, Kalimantan Barat
                     </div>
-                </div>
-                
-                <button class="carousel-btn next" onclick="moveSlide(1)">&#10095;</button>
-            </div>
 
-            <div class="carousel-dots">
-                <span class="dot active" onclick="currentSlide(0)"></span>
-                <span class="dot" onclick="currentSlide(1)"></span>
-            </div>
-        </div> 
-    </section>
+                    <!-- Headline -->
+                    <h1 class="text-5xl sm:text-6xl md:text-[5.5rem] font-serif font-black text-gray-900 dark:text-white leading-[0.9] tracking-tighter mb-8">
+                        “Madu asli” gampang ditulis di label. Asal-usulnya yang susah <span class="underline underline-thick">dipalsukan.</span>
+                    </h1>
 
-    <section id="about" class="section">
-        <div class="container">
-            <h2 class="section-title">Tentang Saya</h2>
-            <div class="about-grid">
-                <div class="about-text">
-                    <p>
-                        Saya adalah seorang profesional dan peneliti di bidang ilmu komputer dengan spesialisasi pada <strong>Digital Forensics</strong> dan keamanan siber. Memiliki latar belakang akademik Magister Komputer (M.Kom.) memberikan saya fondasi yang kuat dalam melakukan analisis mendalam terhadap integritas data dan pemulihan artefak digital.
+                    <!-- Paragraph -->
+                    <p class="text-gray-600 dark:text-gray-300 text-lg sm:text-xl leading-relaxed mb-8">
+                        Madu Arowana 250 ml dipanen dari sarang lebah hutan <strong class="text-gray-900 dark:text-white font-semibold">Apis dorsata</strong> di Danau Sentarum — kawasan <strong class="text-gray-900 dark:text-white font-semibold">Cagar Biosfer UNESCO</strong> di Kapuas Hulu, Kalimantan Barat. Dikemas berlapis supaya sampai di rumah Anda utuh, dan dijual langsung dari dekat sumbernya tanpa rantai perantara yang bikin harga membengkak.
                     </p>
-                    <p>
-                        Fokus riset saya saat ini meliputi pengembangan sistem parsing otomatis untuk log penerbangan drone (DJI), steganalisis untuk mendeteksi pesan tersembunyi pada media digital, serta penerapan metrik statistik seperti Hamming Distance dan Mean Absolute Percentage Error (MAPE) untuk pengujian akurasi alat forensik.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <section id="experience" class="section bg-darker">
-        <div class="container">
-            <h2 class="section-title">Pendidikan & Latar Belakang</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">Pascasarjana</div>
-                    <div class="timeline-content">
-                        <h3>Magister Komputer (M.Kom.)</h3>
-                        <p class="timeline-institution">Bidang Fokus: Keamanan Siber & Digital Forensics</p>
-                        <p>Mendalami arsitektur keamanan tingkat lanjut, analisis malware, forensik jaringan, serta metodologi penelitian ilmiah untuk pengembangan solusi keamanan digital komparatif.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">Sarjana</div>
-                    <div class="timeline-content">
-                        <h3>Sarjana Komputer (S.Kom.)</h3>
-                        <p class="timeline-institution">Sains Data & Teknik Informatika</p>
-                        <p>Membangun pemahaman fundamental dalam pemrograman, struktur data, sistem operasi, dan konsep dasar keamanan jaringan komputer.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                    <!-- Checklist -->
+                    <ul class="space-y-4 mb-10 text-gray-700 dark:text-gray-300">
+                        <li class="flex items-start">
+                            <i class="ph-bold ph-check text-brand-500 text-xl mt-1 mr-3 shrink-0"></i>
+                            <span>Sumber nektar jelas — ±20 jenis tumbuhan hutan rawa (catatan FAO)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ph-bold ph-check text-brand-500 text-xl mt-1 mr-3 shrink-0"></i>
+                            <span>Panen tradisional “tikung” oleh petani lokal — sarang lebah tidak dihancurkan</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ph-bold ph-check text-brand-500 text-xl mt-1 mr-3 shrink-0"></i>
+                            <span>Packing berlapis + segel — risiko pecah atau bocor kami yang tanggung</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ph-bold ph-check text-brand-500 text-xl mt-1 mr-3 shrink-0"></i>
+                            <span>Promo hari ini: Rp125.000 <span class="line-through text-gray-400 dark:text-gray-500 ml-1">dari harga normal Rp249.000</span></span>
+                        </li>
+                    </ul>
 
-    <section id="research" class="section">
-        <div class="container">
-            <h2 class="section-title">Riset Terpilih</h2>
-            <div class="project-grid">
-                
-                <div class="project-card">
-                    <div class="project-header">
-                        <span class="folder-icon">📁</span>
-                        <div class="project-links">
-                            <a href="detail-proyek.html" class="icon-link" aria-label="Detail Proyek">↗</a>
-                        </div>
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row items-center gap-4 mb-6">
+                        <button class="w-full sm:w-auto flex items-center justify-center px-8 py-4 bg-brand-500 hover:bg-brand-600 text-white font-bold rounded-full transition-transform transform hover:scale-105 active:scale-95 shadow-lg shadow-brand-500/40 text-lg group">
+                            Beli Sekarang
+                            <i class="ph-bold ph-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                        </button>
+                        <button class="w-full sm:w-auto flex items-center justify-center px-8 py-4 bg-transparent border-2 border-brand-200 dark:border-gray-700 hover:border-brand-500 dark:hover:border-brand-500 text-brand-600 dark:text-brand-400 font-bold rounded-full transition-colors text-lg group">
+                            Baca ceritanya dulu
+                            <i class="ph-bold ph-arrow-down ml-2 group-hover:translate-y-1 transition-transform text-sm"></i>
+                        </button>
                     </div>
-                    <div class="project-body">
-                        <h3><a href="detail-proyek.html" style="color: inherit; text-decoration: none;">Drone Flight Logs Parser to iLEAPP</a></h3>
-                        <p>Mengembangkan dan mengintegrasikan modul parser log penerbangan drone (.DAT, .TXT, .LOG) ke dalam ekosistem iLEAPP untuk mengekstrak data telemetri dan koordinat GPS.</p>
-                        <div class="tech-stack">
-                            <span>Python</span>
-                            <span>iLEAPP</span>
-                            <span>Autopsy</span>
-                        </div>
+
+                    <!-- Trust Note -->
+                    <div class="flex items-start text-sm text-gray-500 dark:text-gray-400">
+                        <i class="ph ph-lock-key text-brand-500 text-lg mt-0.5 mr-2 shrink-0"></i>
+                        <p>Tanpa pembayaran di form<br>— admin kami konfirmasi dulu lewat WhatsApp.</p>
                     </div>
                 </div>
 
-                <div class="project-card">
-                    <div class="project-header">
-                        <span class="folder-icon">📁</span>
-                        <div class="project-links">
-                            <a href="#" class="icon-link" aria-label="External Link">↗</a>
-                        </div>
+                <!-- Right Column: Visuals -->
+                <div class="relative w-full max-w-md mx-auto lg:max-w-none mt-16 lg:mt-0 lg:ml-auto">
+                    
+                    <!-- Stylized Product Shape (Main Visual) -->
+                    <div class="relative bg-brand-500 rounded-t-[40px] rounded-bl-[40px] rounded-br-sm h-[400px] sm:h-[500px] w-[85%] ml-auto mr-4 sm:mr-8 shadow-2xl flex items-center justify-center overflow-hidden">
+                        <!-- Abstract overlay pattern to simulate depth/texture -->
+                        <div class="absolute inset-0 bg-gradient-to-tr from-brand-600/40 to-transparent"></div>
+                        <span class="relative z-10 text-brand-900 font-bold text-lg mix-blend-color-burn">Madu Arowana 250ml</span>
                     </div>
-                    <div class="project-body">
-                        <h3>Steganalisis Berbasis LSB</h3>
-                        <p>Riset mengenai penyembunyian pesan rahasia menggunakan metode LSB pada citra digital, dilengkapi dengan analisis perbedaan piksel untuk deteksi anomali.</p>
-                        <div class="tech-stack">
-                            <span>Python</span>
-                            <span>Image Processing</span>
-                            <span>Steganalysis</span>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="project-card">
-                    <div class="project-header">
-                        <span class="folder-icon">📊</span>
+                    <!-- Floating Rating Badge -->
+                    <div class="absolute top-8 right-0 bg-white dark:bg-gray-800 rounded-full px-4 py-2.5 shadow-xl flex items-center space-x-2 animate-bounce-slow border border-gray-100 dark:border-gray-700">
+                        <div class="flex text-brand-500 text-sm">
+                            <i class="ph-fill ph-star"></i>
+                            <i class="ph-fill ph-star"></i>
+                            <i class="ph-fill ph-star"></i>
+                            <i class="ph-fill ph-star"></i>
+                            <i class="ph-fill ph-star-half"></i>
+                        </div>
+                        <span class="font-bold text-gray-900 dark:text-white">4,9/5</span>
                     </div>
-                    <div class="project-body">
-                        <h3>Metrik Validasi Forensik</h3>
-                        <p>Implementasi pemodelan matematika (MAPE) untuk menguji tingkat kesamaan data dan akurasi ekstraksi artefak antar berbagai alat uji forensik digital.</p>
-                        <div class="tech-stack">
-                            <span>Mathematics</span>
-                            <span>Statistical Metrics</span>
-                            <span>Data Testing</span>
+
+                    <!-- Floating Location Badge -->
+                    <div class="absolute bottom-8 left-0 sm:-left-8 bg-white dark:bg-gray-800 rounded-2xl p-4 shadow-xl flex items-center space-x-4 border border-gray-100 dark:border-gray-700 max-w-[280px]">
+                        <div class="w-12 h-12 rounded-full bg-brand-100 dark:bg-brand-900/50 flex items-center justify-center shrink-0">
+                            <i class="ph ph-bank text-brand-600 dark:text-brand-400 text-2xl"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold text-gray-500 dark:text-gray-400 tracking-wider">KAWASAN</p>
+                            <p class="font-black text-gray-900 dark:text-white leading-tight">Cagar Biosfer UNESCO</p>
                         </div>
                     </div>
                 </div>
 
             </div>
         </div>
-    </section>
+    </main>
 
-    <section id="contact" class="section contact-section">
-        <div class="container text-center">
-            <p class="pre-title">Langkah Selanjutnya</p>
-            <h2 class="contact-heading">Hubungi Saya</h2>
-            <p class="contact-lead">Kotak masuk saya selalu terbuka untuk kolaborasi riset, pengembangan proyek open-source, maupun diskusi profesional seputar investigasi forensik digital dan solusi IT.</p>
-            <a href="mailto:nopiadintya24@gmail.com" class="btn btn-primary btn-large">Kirim Pesan</a>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <div class="container text-center">
-            <p>&copy; 2026 Novi Adintya Putra, S.Kom., M.Kom. Built with HTML & CSS.</p>
-        </div>
-    </footer>
+    <style>
+        /* Custom subtle bounce animation for badges */
+        @keyframes bounce-slow {
+            0%, 100% { transform: translateY(-5%); }
+            50% { transform: translateY(0); }
+        }
+        .animate-bounce-slow {
+            animation: bounce-slow 4s infinite ease-in-out;
+        }
+    </style>
 
     <script>
-        // Logika Hamburger Menu Mobile
-        const mobileMenu = document.getElementById('mobile-menu');
-        const navLinks = document.querySelector('.nav-links');
+        // Dark mode toggle logic
+        const themeToggleBtn = document.getElementById('themeToggle');
+        
+        // Check for saved user preference, if any, on load of the website
+        const currentTheme = localStorage.getItem('theme');
+        if (currentTheme) {
+            document.documentElement.classList.add(currentTheme);
+        } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
 
-        mobileMenu.addEventListener('click', () => {
-            mobileMenu.classList.toggle('is-active');
-            navLinks.classList.toggle('active');
+        // Toggle theme on button click
+        themeToggleBtn.addEventListener('click', function() {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            }
         });
-
-        document.querySelectorAll('.nav-links li a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.remove('is-active');
-                navLinks.classList.remove('active');
-            });
-        });
-
-        // Logika Carousel Portofolio
-        let slideIndex = 0;
-        const slides = document.querySelectorAll('.carousel-slide');
-        const dots = document.querySelectorAll('.dot');
-        const track = document.getElementById('portfolio-track');
-
-        function moveSlide(n) {
-            slideIndex += n;
-            if (slideIndex >= slides.length) { slideIndex = 0; }
-            if (slideIndex < 0) { slideIndex = slides.length - 1; }
-            updateCarousel();
-        }
-
-        function currentSlide(n) {
-            slideIndex = n;
-            updateCarousel();
-        }
-
-        function updateCarousel() {
-            track.style.transform = `translateX(-${slideIndex * 100}%)`;
-            dots.forEach(dot => dot.classList.remove('active'));
-            dots[slideIndex].classList.add('active');
-        }
     </script>
 </body>
 </html>
